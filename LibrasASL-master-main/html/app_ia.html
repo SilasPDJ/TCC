@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASL - Tradução de Libras</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMX6zEtP1c/aKXgviLlw6pglZo8yG0/VIJG9/2p" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- Fonte futurística -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOPO -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="nav-logo">
+                <a class="navbar-brand navtitle" href="../index.html">
+                    ASL <i class="fa-solid fa-language"></i>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-item nav-link active" href="../index.html">Início</a>
+                    <a class="nav-item nav-link" href="../html/traducao.html">Tradução</a>
+                    <a class="nav-item nav-link" href="../index.html#secao1">Conheça</a>
+                    <a class="nav-item nav-link ml-4" href="html/app_ia.html" style="">Executar Reconhecimento de Gestos</a>
+                    <a class="nav-item nav-link" href="../html/aprenda.html">Aprenda</a>
+                    <a class="nav-item nav-link" href="../index.html#secao2">Sobre</a>
+                    
+                </div>
+                <a href="../html/login.html" target="_blank">
+                    <button type="button" class="btn btn-outline-secondary ml-3">Entrar</button>
+                </a>
+                <a href="../html/cadastrar.html" target="_blank">
+                    <button type="button" class="btn btn-outline-secondary ml-2">Cadastre-se</button>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Botão futurístico -->
+    <div class="text-center mt-4">
+        <button id="sendDataBtn" class="btn-futuristic">Começar Treinamento de Gestos</button>
+    </div>
+
+    <!-- Informações -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h3>Por que aprender a traduzir de Libras para ASL?</h3>
+                <p>A Língua Brasileira de Sinais (Libras) é utilizada no Brasil. Já a Língua Americana de Sinais (ASL)
+                    é usada nos EUA. Traduzir entre Libras e ASL é útil para comunicação entre usuários dessas
+                    línguas.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h3>Como funciona a tradução de Libras para ASL?</h3>
+                <p>A tradução envolve a interpretação de gestos e expressões faciais de quem usa Libras e sua
+                    conversão para a ASL. Embora sejam línguas de sinais, Libras e ASL têm diferenças
+                    significativas de vocabulário e gramática.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="footer py-3 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>ASL Libras</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="footerA" href="#">Sobre nós</a></li>
+                        <li><a class="footerA" href="#">Contato</a></li>
+                        <li><a class="footerA" href="#">Termos de uso</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contatos</h4>
+                    <p>Telefone: (11) 1234-5678</p>
+                    <p>E-mail: contato@asl.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Siga-nos</h4>
+                    <button class="btnFooter"><i class="fab fa-instagram"></i></button>
+                    <button class="btnFooter"><i class="fab fa-facebook"></i></button>
+                    <button class="btnFooter"><i class="fab fa-youtube"></i></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
+
+    <!-- JavaScript para enviar dados ao Flask -->
+    <script>
+        document.getElementById('sendDataBtn').addEventListener('click', function () {
+            const language = "Portuguese";
+            const data = {
+                selectedLanguage: language,
+                message: "Iniciando captura de gestos."
+            };
+
+            fetch('http://127.0.0.1:5000/send-data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Dados enviados com sucesso!');
+                })
+                .catch((error) => {
+                    alert('Erro ao enviar dados.');
+                });
+        });
+    </script>
+</body>
+
+</html>
