@@ -121,7 +121,7 @@ form.addEventListener("submit", function (event) {
   });
 
   // Validação direto do php...
-  console.log(isValid)
+
   if (isValid) {
     $.ajax({
       type: "POST",
@@ -136,7 +136,7 @@ form.addEventListener("submit", function (event) {
         termosUso: termosUsoCheckbox.checked,
       },
       success: function (response) {
-        console.log(response);
+        console.log(response.success)
         if (!response.success) {
           let errorMessage = "";
           for (let key in response) {
@@ -146,7 +146,8 @@ form.addEventListener("submit", function (event) {
           }
           $(validationDiv).html(errorMessage).removeClass("text-success").addClass("text-danger");
         } else {
-          // redirecionar
+          console.log('Redirecionando...');
+          window.location.href = '/'; // ou o caminho correto
         }
       },
       error: function () {

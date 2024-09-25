@@ -1,6 +1,9 @@
 <?php
 require_once('conexao.php');
 
+// Inicia a sessão
+session_start();
+
 // Inicialize um array para armazenar a resposta
 $response = array();
 
@@ -12,7 +15,6 @@ $inputUser = $_POST['inputUser'];
 $inputPassword = $_POST['inputPassword'];
 $inputConfirmPassword = $_POST['inputConfirmPassword'];
 $termosUso = $_POST['termosUso']  === 'true' ? 1 : 0;
-
 
 // --- Verifica se as variáveis estão definidas e não vazias
 if (!isset($inputName) || empty($inputName)) {
@@ -60,6 +62,8 @@ if ($termosUso !== 1) {
 // Insira o novo usuário
 if (empty($response)) {
     if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $inputEmail, $inputUser, $inputPassword, $termosUso)) {
+        // Armazena informações do usuário na sessão
+        $_SESSION['logged_user'] = $inputName;  // Ou outro identificador, como ID de usuário
         $response['success'] = true;
         $response['message'] = "Usuário criado com sucesso.";
     } else {
@@ -68,7 +72,6 @@ if (empty($response)) {
 } else {
     $response['success'] = false;
 }
-
 
 // Verificar se o email ja foi cadastrado
 function emailJaCadastrado($conexao, $email)
@@ -85,7 +88,6 @@ function emailJaCadastrado($conexao, $email)
 function inserirNovoUsuario($conexao, $nome, $sobrenome, $email, $nomeDeUsuario, $senha, $termosAceitos)
 {
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-
 
     $sql = "INSERT INTO usuarios (nome, sobrenome, email, nome_de_usuario, senha, termos_aceitos)
             VALUES ('$nome', '$sobrenome', '$email', '$nomeDeUsuario', '$senhaHash', '$termosAceitos')";
