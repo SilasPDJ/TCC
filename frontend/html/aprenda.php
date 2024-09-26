@@ -55,7 +55,7 @@
                             <span class="material-symbols-outlined">workspace_premium</span>
                         </p>
                         <p class="card-text">Duração: 12 Horas</p>
-                        <a href="../html/IndexVideos/VideoInterprete.html" target="_blank" class="btn btn-primary">Ver
+                        <a href="../html/IndexVideos/VideoInterprete" class="btn btn-primary">Ver
                             mais</a>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                             <span class="material-symbols-outlined">workspace_premium</span>
                         </p>
                         <p class="card-text">Duração: 22 Horas</p>
-                        <a href="../html/IndexVideos/ASLAmericano.html" target="_blank" class="btn btn-primary">Ver
+                        <a href="../html/IndexVideos/ASLAmericano" class="btn btn-primary">Ver
                             mais</a>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                             <span class="material-symbols-outlined">workspace_premium</span>
                         </p>
                         <p class="card-text">Duração: 8 Horas</p>
-                        <a href="../html/IndexVideos/leituraLabial.html" target="_blank" class="btn btn-primary">Ver
+                        <a href="../html/IndexVideos/leituraLabial" class="btn btn-primary">Ver
                             mais</a>
                     </div>
                 </div>

@@ -103,7 +103,7 @@
                         </form>
 
                         <div class="text-center mt-3">
-                            Já sou cadastrado? <a href="login.html">Faça login aqui</a>
+                            Já sou cadastrado? <a href="login">Faça login aqui</a>
                         </div>
                     </div>
                 </div>

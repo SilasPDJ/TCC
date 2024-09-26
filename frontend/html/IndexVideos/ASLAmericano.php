@@ -28,37 +28,7 @@
 
 <body>
     <!-- NAVBAR -->
-    <header>
-        <!-- NAVBAR RESPONSIVA -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="nav-logo">
-                <a class="navbar-brand navtitle" href="..//">
-                    ASL <i class="fa-solid fa-language"></i>
-                </a>
-            </div>
-            <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-item nav-link active ml-4" href="..//">Início</a>
-                    <a class="nav-item nav-link ml-4" href="../../html/traducao.php">Tradução</a>
-                    <a class="nav-item nav-link ml-4" href="..//#secao1">Conheça</a>
-                    <a class="nav-item nav-link ml-4" href="../../html/aprenda.php">Aprenda</a>
-                    <a class="nav-item nav-link ml-4" href="..//#secao2">Sobre</a>
-                    <hr class="linhabar d-lg-none w-100 my-2">
-                </div>
-                <br>
-                <a href="../../html/login.html" target="_blank">
-                    <button type="button" class="btn btn-outline-secondary um ml-4 mr-2">Entrar</button>
-                </a><br>
-                <a href="../../html/cadastrar.html" target="_blank">
-                    <button type="button" class="btn btn-outline-secondary dois mr-4">Cadastre-se</button>
-                </a>
-            </div>
-        </nav>
-    </header>
+    <?php include('../utils/navbar.php') ?>
 
     <!-- CONTEÚDO -->
     <main>
@@ -139,63 +109,63 @@
                         <!-- PERGUNTAS -->
                         <div id="descricao-perguntas" class="descricao-ocultavel" style="display: none;">
                             <p>
-                                <div class="container mt-4">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5>Faça uma pergunta:</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="pergunta1">Pergunta :</label>
-                                                    <input type="text" class="form-control" id="pergunta1">
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Enviar</button>
-                                            </form>
-                                        </div>
+                            <div class="container mt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Faça uma pergunta:</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="pergunta1">Pergunta :</label>
+                                                <input type="text" class="form-control" id="pergunta1">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Enviar</button>
+                                        </form>
                                     </div>
                                 </div>
+                            </div>
                             </p>
                         </div>
 
                         <!-- AVALIAÇÃO -->
                         <div id="descricao-avaliacoes" class="descricao-ocultavel" style="display: none;">
                             <p>
-                                <div class="container mt-4">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5>Avalie o Conteúdo:</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="nome">Nome:</label>
-                                                    <input type="text" class="form-control" id="nome" required>
+                            <div class="container mt-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Avalie o Conteúdo:</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="nome">Nome:</label>
+                                                <input type="text" class="form-control" id="nome" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="comentario">Comentário:</label>
+                                                <textarea class="form-control" id="comentario" rows="5"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="avaliacao"><strong>Avaliação:</strong></label>
+                                                <div class="rating">
+                                                    <input type="radio" id="estrela1" name="avaliacao" value="1">
+                                                    <label for="estrela1"></label>
+                                                    <input type="radio" id="estrela2" name="avaliacao" value="2">
+                                                    <label for="estrela2"></label>
+                                                    <input type="radio" id="estrela3" name="avaliacao" value="3">
+                                                    <label for="estrela3"></label>
+                                                    <input type="radio" id="estrela4" name="avaliacao" value="4">
+                                                    <label for="estrela4"></label>
+                                                    <input type="radio" id="estrela5" name="avaliacao" value="5">
+                                                    <label for="estrela5"></label>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="comentario">Comentário:</label>
-                                                    <textarea class="form-control" id="comentario" rows="5"></textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="avaliacao"><strong>Avaliação:</strong></label>
-                                                    <div class="rating">
-                                                        <input type="radio" id="estrela1" name="avaliacao" value="1">
-                                                        <label for="estrela1"></label>
-                                                        <input type="radio" id="estrela2" name="avaliacao" value="2">
-                                                        <label for="estrela2"></label>
-                                                        <input type="radio" id="estrela3" name="avaliacao" value="3">
-                                                        <label for="estrela3"></label>
-                                                        <input type="radio" id="estrela4" name="avaliacao" value="4">
-                                                        <label for="estrela4"></label>
-                                                        <input type="radio" id="estrela5" name="avaliacao" value="5">
-                                                        <label for="estrela5"></label>
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
-                                            </form>
-                                        </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+                                        </form>
                                     </div>
                                 </div>
+                            </div>
                             </p>
                         </div>
 

@@ -40,7 +40,7 @@
                         <div class="carousel-caption d-md-block">
                             <h3 class="h3-carrossel">Meto Libras</h3>
                             <p class="p-carrossel">O caminho para uma boa comunicação.</p>
-                            <a href="#secao1">
+                            <a href="#sobre">
                                 <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
                             </a>
                         </div>
@@ -50,7 +50,7 @@
                         <div class="carousel-caption d-md-block">
                             <h3 class="h3-carrossel">Tradução</h3>
                             <p class="p-carrossel">Traduza Libras para ASL em qualquer lugar!</p>
-                            <a href="html/traducao.php" target="_blank">
+                            <a href="html/traducao">
                                 <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
                             </a>
                         </div>
@@ -60,7 +60,7 @@
                         <div class="carousel-caption d-md-block">
                             <h3 class="h3-carrossel">Aprenda</h3>
                             <p class="p-carrossel">Saiba o caminho da comunicação com pessoas deficiêntes auditivas.</p>
-                            <a href="html/aprenda.php" target="_blank">
+                            <a href="html/aprenda">
                                 <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
                             </a>
                         </div>
@@ -79,14 +79,14 @@
 
         <!-- SETA 1 -->
         <div class="seta">
-            <a class="seta-click" href="#secao1">
+            <a class="seta-click" href="#sobre">
                 <i class="fa-solid fa-arrow-down"></i>
             </a>
         </div>
 
         <!-- Quem somos? -->
         <div>
-            <div class="Title-1" id="secao1">
+            <div class="Title-1" id="sobre">
                 <h2>Quem somos?</h2>
             </div>
 
@@ -154,14 +154,14 @@
 
         <!-- SETA 2 -->
         <div class="seta2">
-            <a class="seta-click" href="#secao2">
+            <a class="seta-click" href="#recursos">
                 <i class="fa-solid fa-arrow-down"></i>
             </a>
         </div>
 
         <!-- SOBRE -->
         <div>
-            <div class="Title-1" id="secao2">
+            <div class="Title-1" id="recursos">
                 <h2>Principais Recursos</h2>
             </div>
 

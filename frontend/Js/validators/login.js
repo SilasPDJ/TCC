@@ -54,14 +54,13 @@ form.addEventListener('submit', function (event) {
         inputPassword: passwordInputJs.value,
       },
       success: function (response) {
-        console.log(response);
+        // console.log(response);
         if (!response.success) {
           $(validationDiv).text(response.message).removeClass("text-success").addClass("text-danger");
         } else {
+          console.log('tetete')
           // redirecionar
-          console.log('redirecionar')
-          // window.open('/html/traducao.php')
-          window.open('/')
+          window.location.href = '/'
         }
       },
       error: function () {

@@ -27,20 +27,27 @@ $isUserLogged = isset($_SESSION['logged_user']);
                     <a class="nav-item nav-link <?php echo $currentPage == 'sistema.html' ? 'active' : ''; ?> ml-4" href="/sistema.html">Sistema</a>
                 <?php endif; ?>
 
-                <a class="nav-item nav-link <?php echo $currentPage == 'index.php' ? 'active' : ''; ?> ml-4" href="/">Início</a>
-                <a class="nav-item nav-link <?php echo $currentPage == 'traducao.php' ? 'active' : ''; ?> ml-4" href="/html/traducao.php">Tradução</a>
-                <a class="nav-item nav-link <?php echo $currentPage == 'aprenda.php' ? 'active' : ''; ?> ml-4" href="/html/aprenda.php">Aprenda</a>
-                <a class="nav-item nav-link ml-4" href="/#secao1">Sobre</a>
-                <a class="nav-item nav-link ml-4" href="/#secao2">Recursos</a>
+                <a class="nav-item nav-link <?php echo $currentPage == 'index' ? 'active' : ''; ?> ml-4" href="/">Início</a>
+                <a class="nav-item nav-link <?php echo $currentPage == 'traducao' ? 'active' : ''; ?> ml-4" href="/html/traducao">Tradução</a>
+                <a class="nav-item nav-link <?php echo $currentPage == 'aprenda' ? 'active' : ''; ?> ml-4" href="/html/aprenda">Aprenda</a>
+                <div class="nav-item dropdown ml-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mais
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/#sobre">Sobre</a>
+                        <a class="dropdown-item" href="/#recursos">Recursos</a>
+                    </div>
+                </div>
                 <hr class="linhabar d-lg-none w-100 my-2">
             </div>
             <div class="navbar-nav">
                 <?php if ($isUserLogged): ?>
                     <span class="navbar-text mr-3">Bem-vindo de volta, <?php echo $_SESSION['logged_user']['nome']; ?>!</span>
-                    <a href="/php/sair.php" class="btn btn-outline-danger my-2 my-sm-0">Sair</a>
+                    <a href="/php/sair" class="btn btn-outline-danger my-2 my-sm-0">Sair</a>
                 <?php else: ?>
-                    <a href="/html/login.php" target="_blank" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Entrar</a>
-                    <a href="/html/cadastrar.php" target="_blank" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
+                    <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Entrar</a>
+                    <a href="/html/cadastro" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
                 <?php endif; ?>
             </div>
         </div>

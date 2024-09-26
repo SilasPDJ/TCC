@@ -6,6 +6,6 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if (isset($_SESSION['logged_user'])) {
-    header('Location: /index.php');
+    header('Location: /');
     exit();
 }
