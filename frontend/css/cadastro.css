@@ -1,8 +1,9 @@
-html, body {
+html,
+body {
     overflow-x: hidden;
-  }
+}
 
-.pagina{
+.pagina {
     display: flex;
     flex-direction: row;
     margin-top: 80px;
@@ -10,7 +11,7 @@ html, body {
     justify-content: flex-start;
 }
 
-.icon-users{
+.icon-users {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,19 +28,24 @@ button.btn {
     margin-top: 20px;
 }
 
-button.btn:hover{
+button.btn:hover {
     background-color: #329213;
+}
+
+.registerImage {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 @media only screen and (max-width: 680px) {
     .registerImage {
-      display: none;
+        display: none;
     }
 
-    .pagina{
+    .pagina {
         margin-top: 40px;
         margin-bottom: 60px;
     }
-    
-  }
-  
+
+}
