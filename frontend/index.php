@@ -18,50 +18,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
+
 <body>
-    <!-- TOPO -->
-    <header>
-        <!-- NAVBAR RESPONSIVA -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="nav-logo">
-                <a class="navbar-brand navtitle" href="/">
-                    ASL <i class="fa-solid fa-language"></i>
-                </a>
-            </div>
+    <?php include 'html/utils/navbar.php'; ?>
 
-            <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-item nav-link active ml-4" href="/">Início</a>
-                    <a class="nav-item nav-link ml-4" href="html/traducao.html">Tradução</a>
-                    <a class="nav-item nav-link ml-4" href="#secao1">Conheça</a>
-                    <a class="nav-item nav-link ml-4" href="html/aprenda.html">Aprenda</a>
-                    <a class="nav-item nav-link ml-4" href="#secao2">Sobre</a>
-                    <hr class="linhabar d-lg-none w-100 my-2">
-                </div>
-                <br>
-                <?php if (isset($_SESSION['logged_user'])): ?> <!-- Verifica se o usuário não está logado -->
-                    <p>Bem-vindo de volta, <?php echo $_SESSION['logged_user']; ?>!</p> <!-- Exibe a mensagem de boas-vindas -->
-                    <a href="php/logout.php">
-                        <button type="button" class="btn btn-outline-secondary">Sair</button>
-                    </a>
-
-                <?php else: ?>
-                    <a href="html/login.html" target="_blank">
-                        <button type="button" class="btn btn-outline-secondary um ml-4 mr-2">Entrar</button>
-                    </a><br>
-                    <a href="html/cadastrar.html" target="_blank">
-                        <button type="button" class="btn btn-outline-secondary dois mr-4">Cadastre-se</button>
-                    </a>
-
-                <?php endif; ?> <!-- Fim da verificação -->
-            </div>
-        </nav>
-    </header>
-
-    <!-- CONTEÚDO -->
     <main>
         <!-- CARROSSEL SLIDE -->
         <div class="carrossel">
@@ -90,7 +50,7 @@
                         <div class="carousel-caption d-md-block">
                             <h3 class="h3-carrossel">Tradução</h3>
                             <p class="p-carrossel">Traduza Libras para ASL em qualquer lugar!</p>
-                            <a href="html/traducao.html" target="_blank">
+                            <a href="html/traducao.php" target="_blank">
                                 <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
                             </a>
                         </div>
@@ -100,7 +60,7 @@
                         <div class="carousel-caption d-md-block">
                             <h3 class="h3-carrossel">Aprenda</h3>
                             <p class="p-carrossel">Saiba o caminho da comunicação com pessoas deficiêntes auditivas.</p>
-                            <a href="html/aprenda.html" target="_blank">
+                            <a href="html/aprenda.php" target="_blank">
                                 <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
                             </a>
                         </div>

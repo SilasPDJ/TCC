@@ -48,7 +48,7 @@ form.addEventListener('submit', function (event) {
   if (isValid) {
     $.ajax({
       type: "POST",
-      url: "/../php/login.php",
+      url: "/php/login.php",
       data: {
         inputEmail: emailInputJs.value,
         inputPassword: passwordInputJs.value,
@@ -60,7 +60,8 @@ form.addEventListener('submit', function (event) {
         } else {
           // redirecionar
           console.log('redirecionar')
-          window.open('/html/traducao.html')
+          // window.open('/html/traducao.php')
+          window.open('/')
         }
       },
       error: function () {

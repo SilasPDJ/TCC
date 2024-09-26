@@ -23,38 +23,7 @@
 
 <body>
     <!-- TOPO -->
-    <header>
-        <!-- NAVBAR RESPONSIVA -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="nav-logo">
-                <a class="navbar-brand navtitle" href="/">
-                    ASL <i class="fa-solid fa-language"></i>
-                </a>
-            </div>
-
-            <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-item nav-link active ml-4" href="/">Início</a>
-                    <a class="nav-item nav-link ml-4" href="../html/traducao.html">Tradução</a>
-                    <a class="nav-item nav-link ml-4" href="/#secao1">Conheça</a>
-                    <a class="nav-item nav-link ml-4" href="../html/aprenda.html">Aprenda</a>
-                    <a class="nav-item nav-link ml-4" href="/#secao2">Sobre</a>
-                    <hr class="linhabar d-lg-none w-100 my-2">
-                </div>
-                <br>
-                <a href="../html/login.html" target="_blank">
-                    <button type="button" class="btn btn-outline-secondary um ml-4 mr-2">Entrar</button>
-                </a><br>
-                <a href="../html/cadastrar.html" target="_blank">
-                    <button type="button" class="btn btn-outline-secondary dois mr-4">Cadastre-se</button>
-                </a>
-            </div>
-        </nav>
-    </header>
+    <?php include 'utils/navbar.php'; ?>
 
     <!-- CONTEÚDO -->
     <main class="traducao-Conteudo">

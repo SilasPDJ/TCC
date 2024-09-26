@@ -1,8 +1,10 @@
 <?php
 require_once('conexao.php');
+require_once('recuperar_dados_usuario.php');
 
-// Inicia a sessão
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Inicialize um array para armazenar a resposta
 $response = array();
@@ -14,7 +16,7 @@ $inputEmail = $_POST['inputEmail'];
 $inputUser = $_POST['inputUser'];
 $inputPassword = $_POST['inputPassword'];
 $inputConfirmPassword = $_POST['inputConfirmPassword'];
-$termosUso = $_POST['termosUso']  === 'true' ? 1 : 0;
+$termosUso = $_POST['termosUso'] === 'true' ? 1 : 0;
 
 // --- Verifica se as variáveis estão definidas e não vazias
 if (!isset($inputName) || empty($inputName)) {
@@ -62,8 +64,12 @@ if ($termosUso !== 1) {
 // Insira o novo usuário
 if (empty($response)) {
     if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $inputEmail, $inputUser, $inputPassword, $termosUso)) {
+        // Recuperar o ID do novo usuário inserido
+        $emailId = buscaEmailUnico($conexao, $inputEmail);
+
         // Armazena informações do usuário na sessão
-        $_SESSION['logged_user'] = $inputName;  // Ou outro identificador, como ID de usuário
+        $_SESSION['logged_user'] = recuperaDadosUsuario($conexao, $emailId);
+
         $response['success'] = true;
         $response['message'] = "Usuário criado com sucesso.";
     } else {
@@ -73,7 +79,7 @@ if (empty($response)) {
     $response['success'] = false;
 }
 
-// Verificar se o email ja foi cadastrado
+// Verificar se o email já foi cadastrado
 function emailJaCadastrado($conexao, $email)
 {
     $sql = "SELECT COUNT(*) AS count FROM usuarios WHERE email = '$email'";
@@ -92,6 +98,20 @@ function inserirNovoUsuario($conexao, $nome, $sobrenome, $email, $nomeDeUsuario,
     $sql = "INSERT INTO usuarios (nome, sobrenome, email, nome_de_usuario, senha, termos_aceitos)
             VALUES ('$nome', '$sobrenome', '$email', '$nomeDeUsuario', '$senhaHash', '$termosAceitos')";
     return $conexao->query($sql);
+}
+
+// Função para buscar o ID do usuário pelo email
+function buscaEmailUnico($conexao, $email)
+{
+    $stmt = $conexao->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result && $row = $result->fetch_assoc()) {
+        return $row['id'];
+    }
+    return -1; // false
 }
 
 // Fechar a conexão após o uso
