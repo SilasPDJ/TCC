@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASL</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/carrossel.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- TOPO -->
+    <header>
+        <!-- NAVBAR RESPONSIVA -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="nav-logo">
+                <a class="navbar-brand navtitle" href="/">
+                    ASL <i class="fa-solid fa-language"></i>
+                </a>
+            </div>
+
+            <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-item nav-link active ml-4" href="/">Início</a>
+                    <a class="nav-item nav-link ml-4" href="html/traducao.html">Tradução</a>
+                    <a class="nav-item nav-link ml-4" href="#secao1">Conheça</a>
+                    <a class="nav-item nav-link ml-4" href="html/aprenda.html">Aprenda</a>
+                    <a class="nav-item nav-link ml-4" href="#secao2">Sobre</a>
+                    <hr class="linhabar d-lg-none w-100 my-2">
+                </div>
+                <br>
+                <?php if (isset($_SESSION['logged_user'])): ?> <!-- Verifica se o usuário não está logado -->
+                    <p>Bem-vindo de volta, <?php echo $_SESSION['logged_user']; ?>!</p> <!-- Exibe a mensagem de boas-vindas -->
+                    <a href="php/logout.php">
+                        <button type="button" class="btn btn-outline-secondary">Sair</button>
+                    </a>
+
+                <?php else: ?>
+                    <a href="html/login.html" target="_blank">
+                        <button type="button" class="btn btn-outline-secondary um ml-4 mr-2">Entrar</button>
+                    </a><br>
+                    <a href="html/cadastrar.html" target="_blank">
+                        <button type="button" class="btn btn-outline-secondary dois mr-4">Cadastre-se</button>
+                    </a>
+
+                <?php endif; ?> <!-- Fim da verificação -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main>
+        <!-- CARROSSEL SLIDE -->
+        <div class="carrossel">
+            <div id="carouselExampleCaptions"
+                class="carousel slide mx-auto meu-carrossel"
+                data-bs-ride="carousel"
+                data-bs-interval="4000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active rounded">
+                        <img src="img/foto2.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <h3 class="h3-carrossel">Meto Libras</h3>
+                            <p class="p-carrossel">O caminho para uma boa comunicação.</p>
+                            <a href="#secao1">
+                                <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item rounded">
+                        <img src="img/interprete.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <h3 class="h3-carrossel">Tradução</h3>
+                            <p class="p-carrossel">Traduza Libras para ASL em qualquer lugar!</p>
+                            <a href="html/traducao.html" target="_blank">
+                                <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item rounded">
+                        <img src="img/estudo.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                            <h3 class="h3-carrossel">Aprenda</h3>
+                            <p class="p-carrossel">Saiba o caminho da comunicação com pessoas deficiêntes auditivas.</p>
+                            <a href="html/aprenda.html" target="_blank">
+                                <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- SETA 1 -->
+        <div class="seta">
+            <a class="seta-click" href="#secao1">
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </div>
+
+        <!-- Quem somos? -->
+        <div>
+            <div class="Title-1" id="secao1">
+                <h2>Quem somos?</h2>
+            </div>
+
+            <div class="img1 container text-center">
+
+                <div class="itensGeral row align-items-start">
+                    <div class="col text">
+                        Somos uma nova empresa tecnológica que surgiu a partir de um grupo na faculdade Metodista (UMESP), de tecnologia.
+                        Com um objetivo em comum de criar soluções inovadoras e impactantes, decidimos unir nossas
+                        habilidades e conhecimentos para fundar uma empresa especializada em promover inclusão e acessibilidade.
+                        <br><br>
+                        Nosso foco principal é o desenvolvimento de um site dedicado à língua de sinais, tanto em Libras (Língua Brasileira de Sinais)
+                        quanto em ASL (American Sign Language). Reconhecemos a importância de derrubar barreiras de comunicação e proporcionar
+                        igualdade de acesso a informações para a comunidade surda.
+                        <br><br>
+                        Em nosso site, você encontrará uma variedade de conteúdos abrangentes sobre o tema.
+                        Nossas páginas são repletas de informações relevantes, artigos educativos e
+                        atualizações sobre a língua de sinais. Nosso objetivo é compartilhar conhecimento e
+                        promover uma compreensão mais ampla da cultura surda.
+                    </div>
+                    <div class="col dois">
+                        <img src="img/comunidade.jpg" class="rounded float-end" alt="...">
+                    </div>
+                </div>
+
+                <div class="itensGeral row align-items-start">
+                    <div class="col dois">
+                        <img src="img/macaquinhos.jpg" class="rounded float-end" alt="...">
+                    </div>
+                    <div class="col text" id="secaoAprenda">
+                        Além disso, oferecemos cursos online, ministrados por instrutores qualificados, que visam capacitar pessoas interessadas em aprender Libras e ASL.
+                        Nosso site fornece um ambiente de aprendizagem interativo, para que nossos alunos possam adquirir habilidades linguísticas
+                        essenciais e se conectar com a comunidade surda.
+                        <br><br>
+                        Uma das principais funções de nosso site é a página de tradução de Libras. Reconhecemos a importância de fornecer uma ferramenta prática para
+                        a tradução de texto para sinais, facilitando a comunicação entre pessoas surdas e ouvintes. Com essa funcionalidade, buscamos aproximar ainda mais os
+                        diferentes grupos linguísticos e incentivar uma sociedade inclusiva.
+                        <br><br>
+                        Como uma empresa tecnológica, estamos sempre em busca de inovação. Estamos sempre aprimorando nosso
+                        site para atender às necessidades e demandas. Valorizamos seu feedback
+                        e estamos comprometidos em oferecer uma experiência única para você.
+                    </div>
+                </div>
+
+                <div class="itensGeral row align-items-start">
+
+                    <div class="col text">
+                        Estamos entusiasmados com a oportunidade de fazer a diferença na vida das pessoas, promovendo a inclusão e a
+                        acessibilidade por meio de nossa plataforma online.
+                        Nossa missão é construir uma ponte de comunicação entre pessoas surdas e ouvintes, capacitando indivíduos e
+                        comunidades para uma interação mais significativa.
+                        <br><br>
+                        Junte-se a nós nessa jornada e faça parte da revolução da inclusão linguística. Seja bem-vindo(a) à nossa empresa tecnológica dedicada à promoção da língua
+                        de sinais e da igualdade de acesso à informação.
+                        <br><br>
+                        Estamos ansiosos para ajudar você a explorar, aprender e se conectar no mundo da Libras e da ASL.
+                    </div>
+                    <div class="col dois">
+                        <img src="img/ilove.jpg" class="rounded float-end ilove" alt="...">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SETA 2 -->
+        <div class="seta2">
+            <a class="seta-click" href="#secao2">
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </div>
+
+        <!-- SOBRE -->
+        <div>
+            <div class="Title-1" id="secao2">
+                <h2>Principais Recursos</h2>
+            </div>
+
+            <div class="img1 container text-center">
+
+                <div class="itensGeral row align-items-start">
+                    <div class="col dois">
+                        <img src="img/libras.jpg" class="rounded float-end" alt="...">
+                    </div>
+                    <div class="col text">
+                        Estamos comprometidos em fornecer recursos de alta qualidade para tornar o aprendizado da Libras uma experiência enriquecedora.
+                        Sua opinião é fundamental para nós. Se você tiver algum feedback sobre nossos recursos ou encontrar algum problema,
+                        não hesite em entrar em contato conosco.
+                        <br><br>
+                        Concluindo, convidamos você a explorar nossos recursos e embarcar nessa jornada de aprendizado da Libras.
+                        Ao dominar essa linguagem, você estará contribuindo para um mundo mais inclusivo e acessível.
+                        Deixe-nos saber como podemos melhor atendê-lo e auxiliá-lo em sua jornada de aprendizado.
+                        Seu feedback é importante para nós. Entre em contato conosco caso precise de alguma assistência adicional. <br><br><br>
+
+                        <button type="button" class="btn saiba btn-secondary  col-md-2">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </button>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- PARTE DE BAIXO -->
+    <footer class="footer baixo py-3">
+        <div class="container">
+            <div class="row itens">
+                <div class="col-md-4">
+                    <h4>ASL Libras</h4>
+                    <ul class="list-unstyled">
+                        <li><a class="footerA" href="#">Sobre nós</a></li>
+                        <li><a class="footerA" href="#">Contato</a></li>
+                        <li><a class="footerA" href="#">Termos de uso</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contatos</h4>
+                    <p>Telefone: (11) 1234-5678</p>
+                    <p>E-mail: contato@asl.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Siga-nos</h4>
+                    <button class="btnFooter"><i class="fa-brands btns fa-instagram"></i></button>
+                    <button class="btnFooter"><i class="fa-brands btns fa-square-facebook"></i></button>
+                    <button class="btnFooter"><i class="fa-brands btns fa-youtube"></i></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+</body>
+
+</html>
