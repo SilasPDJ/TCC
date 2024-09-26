@@ -1,6 +1,15 @@
 <?php
-session_start(); // Certifique-se de iniciar a sessão aqui
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$currentPage = basename($_SERVER['PHP_SELF']); // Captura o nome do arquivo atual
+
+$isUserLogged = isset($_SESSION['logged_user']);
+
 ?>
+
+
+
 <!-- TOPO -->
 <header>
     <!-- NAVBAR RESPONSIVA -->
@@ -16,15 +25,29 @@ session_start(); // Certifique-se de iniciar a sessão aqui
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mx-auto">
-                <a class="nav-item nav-link active ml-4" href="/">Início</a>
-                <a class="nav-item nav-link ml-4" href="/html/traducao.php">Tradução</a>
-                <a class="nav-item nav-link ml-4" href="/#secao1">Conheça</a>
-                <a class="nav-item nav-link ml-4" href="/html/aprenda.php">Aprenda</a>
-                <a class="nav-item nav-link ml-4" href="/#secao2">Sobre</a>
+                <?php if ($isUserLogged): ?>
+                    <a class="nav-item nav-link <?php echo $currentPage == 'sistema.html' ? 'active' : ''; ?> ml-4" href="/sistema.html">Sistema</a>
+                <?php endif; ?>
+
+                <a class="nav-item nav-link <?php echo $currentPage == 'index.php' ? 'active' : ''; ?> ml-4" href="/">Início</a>
+                <a class="nav-item nav-link <?php echo $currentPage == 'traducao.php' ? 'active' : ''; ?> ml-4" href="/html/traducao.php">Tradução</a>
+                <a class="nav-item nav-link <?php echo $currentPage == 'aprenda.php' ? 'active' : ''; ?> ml-4" href="/html/aprenda.php">Aprenda</a>
+
+                <!-- Dropdown para "Sobre" e "Recursos" -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ml-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mais
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item <?php echo $currentPage == 'index.php' && strpos($_SERVER['REQUEST_URI'], '#secao1') !== false ? 'active' : ''; ?>" href="/#secao1">Sobre</a>
+                        <a class="dropdown-item <?php echo $currentPage == 'index.php' && strpos($_SERVER['REQUEST_URI'], '#secao2') !== false ? 'active' : ''; ?>" href="/#secao2">Recursos</a>
+                    </div>
+                </div>
+
                 <hr class="linhabar d-lg-none w-100 my-2">
             </div>
             <div class="navbar-nav">
-                <?php if (isset($_SESSION['logged_user'])): ?>
+                <?php if ($isUserLogged): ?>
                     <span class="navbar-text mr-3">Bem-vindo de volta, <?php echo $_SESSION['logged_user']['nome']; ?>!</span>
                     <a href="/php/sair.php" class="btn btn-outline-danger my-2 my-sm-0">Sair</a>
                 <?php else: ?>
