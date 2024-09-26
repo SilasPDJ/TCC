@@ -8,8 +8,6 @@ $isUserLogged = isset($_SESSION['logged_user']);
 
 ?>
 
-
-
 <!-- TOPO -->
 <header>
     <!-- NAVBAR RESPONSIVA -->
@@ -32,18 +30,8 @@ $isUserLogged = isset($_SESSION['logged_user']);
                 <a class="nav-item nav-link <?php echo $currentPage == 'index.php' ? 'active' : ''; ?> ml-4" href="/">Início</a>
                 <a class="nav-item nav-link <?php echo $currentPage == 'traducao.php' ? 'active' : ''; ?> ml-4" href="/html/traducao.php">Tradução</a>
                 <a class="nav-item nav-link <?php echo $currentPage == 'aprenda.php' ? 'active' : ''; ?> ml-4" href="/html/aprenda.php">Aprenda</a>
-
-                <!-- Dropdown para "Sobre" e "Recursos" -->
-                <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle ml-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Mais
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item <?php echo $currentPage == 'index.php' && strpos($_SERVER['REQUEST_URI'], '#secao1') !== false ? 'active' : ''; ?>" href="/#secao1">Sobre</a>
-                        <a class="dropdown-item <?php echo $currentPage == 'index.php' && strpos($_SERVER['REQUEST_URI'], '#secao2') !== false ? 'active' : ''; ?>" href="/#secao2">Recursos</a>
-                    </div>
-                </div>
-
+                <a class="nav-item nav-link ml-4" href="/#secao1">Sobre</a>
+                <a class="nav-item nav-link ml-4" href="/#secao2">Recursos</a>
                 <hr class="linhabar d-lg-none w-100 my-2">
             </div>
             <div class="navbar-nav">
@@ -51,8 +39,8 @@ $isUserLogged = isset($_SESSION['logged_user']);
                     <span class="navbar-text mr-3">Bem-vindo de volta, <?php echo $_SESSION['logged_user']['nome']; ?>!</span>
                     <a href="/php/sair.php" class="btn btn-outline-danger my-2 my-sm-0">Sair</a>
                 <?php else: ?>
-                    <a href="html/login.html" target="_blank" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Entrar</a>
-                    <a href="html/cadastrar.html" target="_blank" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
+                    <a href="/html/login.php" target="_blank" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Entrar</a>
+                    <a href="/html/cadastrar.php" target="_blank" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
                 <?php endif; ?>
             </div>
         </div>

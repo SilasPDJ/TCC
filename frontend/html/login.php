@@ -1,3 +1,6 @@
+<?php require_once('utils/security/redirecionar_index.php') ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
