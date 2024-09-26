@@ -8,7 +8,9 @@ from dotenv import load_dotenv
 # Configurando logging para arquivo e terminal
 log_format = '%(asctime)s - %(levelname)s - %(message)s'
 logging.basicConfig(
-    filename='C:/Users/justi/OneDrive/Documentos/USCS/TCC/LibrasASL-master-main/backend/logs/flask_app.log',  # Arquivo de log
+    # filename='C:/Users/justi/OneDrive/Documentos/USCS/TCC/LibrasASL-master-main/backend/logs/flask_app.log',  # Arquivo de log
+    filename=os.path.join(os.path.dirname(__file__),
+                          '..', 'logs/flask_app.log'),
     level=logging.DEBUG,  # Nível de logging
     format=log_format,
     datefmt='%Y-%m-%d %H:%M:%S'
@@ -70,6 +72,7 @@ class FlaskApp:
     def run(self):
         logging.info("Servidor Flask iniciado na porta 5000.")
         self.app.run(debug=True, port=5000)
+
 
 if __name__ == '__main__':
     app = FlaskApp()

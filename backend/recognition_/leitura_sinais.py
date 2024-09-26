@@ -9,7 +9,9 @@ warnings.filterwarnings('ignore', category=UserWarning, module='google.protobuf.
 '''
 
 class HandGestureDetector:
-    def __init__(self, output_file="C:/Users/justi/OneDrive/Documentos/USCS/TCC/LibrasASL-master-main/backend/logs/hand_gestures_data.xlsx"):
+    output_default_file = os.path.join(os.path.dirname(__file__), '..','logs', 'hand_gestures_data.xlsx')
+    # "C:/Users/justi/OneDrive/Documentos/USCS/TCC/LibrasASL-master-main/backend/logs/hand_gestures_data.xlsx"
+    def __init__(self, output_file=output_default_file):
         self.cap = cv2.VideoCapture(0)
         self.hands = mp.solutions.hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.5)
         self.mp_draw = mp.solutions.drawing_utils

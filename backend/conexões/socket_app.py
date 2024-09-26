@@ -1,8 +1,10 @@
+import os
 import socket
 import subprocess
 import logging
 import signal
 import sys
+
 
 class SocketServer:
     def __init__(self, host, port, log_file):
@@ -30,8 +32,13 @@ class SocketServer:
     def process_data(self, data):
         self.log_info(f"Processing data: {data}")
         try:
+            python_file = os.path.join(os.path.dirname(__file__), "..", "recognition_/leitura_sinais.py")
+
+            # Caminho para o executável Python dentro do ambiente virtual
+            python_executable = os.path.join(os.path.dirname(__file__), "..", "venv", "Scripts", "python")
+
             result = subprocess.run(
-                ["python", "C:/Users/justi/OneDrive/Documentos/USCS/TCC/LibrasASL-master-main/backend/recognition_/leitura_sinais.py"],
+                [python_executable, python_file],
                 capture_output=True,
                 text=True,
                 check=True
@@ -80,6 +87,9 @@ if __name__ == "__main__":
     server = SocketServer(
         host='localhost',
         port=5001,
-        log_file='C:/Users/justi/OneDrive/Documentos/USCS/TCC/LibrasASL-master-main/backend/logs/socket_server.log'
+        # log_file='C:/Users/justi/OneDrive/Documentos/USCS/TCC/LibrasASL-master-main/backend/logs/socket_server.log'
+        log_file=os.path.join(os.path.dirname(__file__),
+                              '..', 'logs/socket_server.log'),
+
     )
     server.start()
