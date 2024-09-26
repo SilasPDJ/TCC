@@ -45,20 +45,16 @@ if (!isset($inputConfirmPassword) || empty($inputConfirmPassword)) {
 
 // --- Validando formulario
 if ($inputPassword !== $inputConfirmPassword) {
-    $response['inputConfirmPassword'] = "Verifique a correspondência das senhas.";
-}
-
-if (strlen($inputPassword) < 8) {
-    $response['inputPassword'] = "Senha deve conter no mínimo 8 caracteres.";
+    $response['inputConfirmPassword'] = "Verifique as informações e tente novamente!";
 }
 
 // Validação para verificar se o e-mail já está em uso
 if (emailJaCadastrado($conexao, $inputEmail)) {
-    $response['inputEmail'] = "E-mail informado já está em uso.";
+    $response['inputEmail'] = "Verifique as informações e tente novamente!";
 }
 
 if ($termosUso !== 1) {
-    $response['termosUso'] = "Você deve concordar com os termos de uso.";
+    $response['termosUso'] = "Você deve aceitar os termos de uso.";
 }
 
 // Insira o novo usuário

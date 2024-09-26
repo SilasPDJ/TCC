@@ -40,6 +40,8 @@ setMinLengthPatternAndTitle(surnameInput, 3);
 setMinLengthPatternAndTitle(userInput, 5);
 
 const $inputs = jQuery(form).find("input");
+let feedbackArray = [];
+$('#btCadastrar').prop('disabled', true);
 
 // Validando os inputs ao digitar
 $inputs.on("input change blur", function (event) {
@@ -59,40 +61,69 @@ $inputs.on("input change blur", function (event) {
   } else {
     $input.removeClass("is-invalid");
   }
+
+  // Verificando se todos os inputs são válidos
+  let isFormValid = true; // Inicializa como verdadeiro
+  $inputs.each(function () {
+    const $input = $(this);
+    const value = $input.val().trim();
+
+    if (!$input.is(":valid") || (this === emailInput && !isValidEmail(value)) || !$input) {
+      isFormValid = false;
+    }
+  });
+
+  // Ativa ou desativa o botão de envio com base na validade do formulário
+  $('#btCadastrar').prop('disabled', !isFormValid || feedbackArray?.length > 0);
+
 });
 
 
-//
 function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv, otherValidationsDiv) {
   // O selector dos inputs deve ser em javascript, não jQuery
   $(inputSenha).add(inputConfirmarSenha).on("input", function () {
+    feedbackArray = []
     const senha = $(inputSenha).val();
     const confirmarSenha = $(inputConfirmarSenha).val();
-    const NUMBER_REGEX = /([0-9])/;
-    const ALPHABETS_REGEX = /([a-z].*[A-Z]|[A-Z].*[a-z])/;
-    const SPECIAL_CHARACTERS = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
 
     // Validando critérios de senha
-    let feedbackArray = []
+    const minLength = 8;
 
-    $(matchDiv).removeClass("text-success").addClass("text-danger")
-    if (senha.length < 8 && confirmarSenha.length < 8) {
-      feedbackArray.push("Senha deve conter no mínimo 8 caracteres.");
-    }
-    // Validando a confirmação de senha
+    // Limpa as classes de feedback
+    $(matchDiv).removeClass("text-success").addClass("text-danger");
+
     if (senha !== confirmarSenha && confirmarSenha) {
       feedbackArray.push("As senhas não correspondem.");
     }
+    if (senha.length < minLength) {
+      feedbackArray.push("Senha deve conter no mínimo 8 caracteres.");
+    } else {
+      if (!/[A-Z]/.test(senha)) {
+        feedbackArray.push("Senha deve conter pelo menos uma letra maiúscula.");
+      }
 
-    // Configurando o texto do feedbackText
-    let feedbackText = ''
-    for (let feedback of feedbackArray) {
-      feedbackText += `${feedback}<br/>`
+      if (!/[a-z]/.test(senha)) {
+        feedbackArray.push("Senha deve conter pelo menos uma letra minúscula.");
+      }
+
+      if (!/[0-9]/.test(senha)) {
+        feedbackArray.push("Senha deve conter pelo menos um número.");
+      }
+
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(senha)) {
+        feedbackArray.push("Senha deve conter pelo menos um caractere especial.");
+      }
+
     }
-    feedbackText += "<br/>"
 
-    $(matchDiv).html(feedbackText)
+    // Configurando o texto do feedback
+    let feedbackText = '';
+    for (let feedback of feedbackArray) {
+      feedbackText += `${feedback}<br/>`;
+    }
+    feedbackText += "<br/>";
 
+    $(matchDiv).html(feedbackText);
   });
 }
 
