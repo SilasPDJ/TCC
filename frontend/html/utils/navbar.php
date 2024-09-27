@@ -49,7 +49,7 @@ $isUserLogged = isset($_SESSION['logged_user']);
                             Bem-vindo de volta, <?php echo $_SESSION['logged_user']['nome']; ?>!
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-center" href="">Gerenciar Perfil</a>
+                            <a class="dropdown-item text-center" href="/html/atualizar_cadastro">Gerenciar Perfil</a>
                         </div>
 
                     </div>
