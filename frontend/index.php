@@ -165,25 +165,24 @@
                 <h2>Principais Recursos</h2>
             </div>
 
-            <div class="img1 container text-center">
+            <div class="img1 container">
 
                 <div class="itensGeral row align-items-start">
                     <div class="col dois">
                         <img src="img/libras.jpg" class="rounded float-end" alt="...">
                     </div>
-                    <div class="col text">
+                    <div class="col text mt-4 pt-2">
                         Estamos comprometidos em fornecer recursos de alta qualidade para tornar o aprendizado da Libras uma experiência enriquecedora.
                         Sua opinião é fundamental para nós. Se você tiver algum feedback sobre nossos recursos ou encontrar algum problema,
                         não hesite em entrar em contato conosco.
                         <br><br>
+
                         Concluindo, convidamos você a explorar nossos recursos e embarcar nessa jornada de aprendizado da Libras.
                         Ao dominar essa linguagem, você estará contribuindo para um mundo mais inclusivo e acessível.
-                        Deixe-nos saber como podemos melhor atendê-lo e auxiliá-lo em sua jornada de aprendizado.
-                        Seu feedback é importante para nós. Entre em contato conosco caso precise de alguma assistência adicional. <br><br><br>
 
-                        <button type="button" class="btn saiba btn-secondary  col-md-2">
+                        <!-- <button type="button" class="btn saiba btn-secondary  col-md-2">
                             <i class="fa-solid fa-phone-volume"></i>
-                        </button>
+                        </button> -->
                     </div>
 
 

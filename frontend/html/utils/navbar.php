@@ -24,7 +24,7 @@ $isUserLogged = isset($_SESSION['logged_user']);
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mx-auto">
                 <?php if ($isUserLogged): ?>
-                    <a class="nav-item nav-link <?php echo $currentPage == 'sistema.html' ? 'active' : ''; ?> ml-4" href="/sistema.html">Sistema</a>
+                    <a class="nav-item nav-link <?php echo $currentPage == 'app_ia' ? 'active' : ''; ?> ml-4" href="/html/app_ia">Reconhecimento de Gestos</a>
                 <?php endif; ?>
 
                 <a class="nav-item nav-link <?php echo $currentPage == 'index' ? 'active' : ''; ?> ml-4" href="/">Início</a>

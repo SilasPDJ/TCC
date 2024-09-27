@@ -1,5 +1,5 @@
     <!-- PARTE DE BAIXO -->
-    <footer class="footer baixo py-3">
+    <footer class="footer py-3" id="footer">
         <div class="container">
             <div class="row itens">
                 <div class="col-md-4">
