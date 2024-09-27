@@ -107,7 +107,7 @@ $userData = $_SESSION['logged_user'];
                             </form>
                             <div class="text-center mt-4" id="validationMessage">
                                 <!-- Alerta Bootstrap -->
-                                <div class="alert alert-dismissible fade show" id="alertMessage" style="display: none;" role="alert">
+                                <div class="alert alert-dismissible fade show" style="display: none;" role="alert">
                                     <span id="alertText"></span>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
@@ -175,6 +175,9 @@ $userData = $_SESSION['logged_user'];
                         <!-- <div class="text-center">
                             Deseja cancelar? <a href="/">Clique aqui para voltar</a>
                         </div> -->
+                        <div class="mt-4" id="passwordMatchMessage">
+
+                        </div>
                     </div>
 
                 </div>
@@ -190,7 +193,7 @@ $userData = $_SESSION['logged_user'];
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
     </script>
-    <script src="../Js/validators/atualizar_cadastro.js"></script>
+    <script src="../Js/validators/atualizar_cadastro.js" type=""></script>
     <script src="../Js/common/events.js"></script>
 
     <script>

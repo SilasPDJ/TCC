@@ -63,7 +63,7 @@ $inputs.on("input change blur", function (event) {
   }
 
   // Verificando se todos os inputs são válidos
-  let isFormValid = true; // Inicializa como verdadeiro
+  let isFormValid = true;
   $inputs.each(function () {
     const $input = $(this);
     const value = $input.val().trim();
@@ -79,7 +79,7 @@ $inputs.on("input change blur", function (event) {
 });
 
 
-function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv, otherValidationsDiv) {
+function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv) {
   // O selector dos inputs deve ser em javascript, não jQuery
   $(inputSenha).add(inputConfirmarSenha).on("input", function () {
     feedbackArray = []
@@ -110,7 +110,7 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv, otherValid
         feedbackArray.push("Senha deve conter pelo menos um número.");
       }
 
-      if (!/[!@#$%^&*(),.?":{}|<>]/.test(senha)) {
+      if (!/[!@#$%^&*'(),.?":{}|<>]/.test(senha)) {
         feedbackArray.push("Senha deve conter pelo menos um caractere especial.");
       }
 
