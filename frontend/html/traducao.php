@@ -63,7 +63,7 @@
         </div>
 
         <div class="container information">
-            <div class="Conteudos row">
+            <div class="Conteudos row mb-4 pb-4">
                 <div class="primeiroConteudo col-md-6">
                     <h2>Por que aprender a traduzir de Libras para ASL?</h2>
                     <p class="resposta">A Língua Brasileira de Sinais (Libras) é uma língua de sinais utilizada

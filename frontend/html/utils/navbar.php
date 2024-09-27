@@ -35,15 +35,24 @@ $isUserLogged = isset($_SESSION['logged_user']);
                         Mais
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/#sobre">Sobre</a>
-                        <a class="dropdown-item" href="/#recursos">Recursos</a>
+                        <a class="dropdown-item text-center" href="/#sobre">Sobre</a>
+                        <a class="dropdown-item text-center" href="/#recursos">Recursos</a>
                     </div>
                 </div>
                 <hr class="linhabar d-lg-none w-100 my-2">
             </div>
             <div class="navbar-nav">
                 <?php if ($isUserLogged): ?>
-                    <span class="navbar-text mr-3">Bem-vindo de volta, <?php echo $_SESSION['logged_user']['nome']; ?>!</span>
+                    <div class="nav-item dropdown ml-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- <span class="navbar-text mr-3"></span> -->
+                            Bem-vindo de volta, <?php echo $_SESSION['logged_user']['nome']; ?>!
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-center" href="">Gerenciar Perfil</a>
+                        </div>
+
+                    </div>
                     <a href="/php/sair" class="btn btn-outline-danger my-2 my-sm-0">Sair</a>
                 <?php else: ?>
                     <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Entrar</a>
