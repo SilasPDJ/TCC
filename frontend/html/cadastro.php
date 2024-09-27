@@ -1,3 +1,5 @@
+<?php require_once('utils/security/redirecionar_index.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,11 +99,11 @@
                                 <div id="passwordMatchMessage" class="mt-1"></div>
                                 <div id="validationMessage"></div>
                             </div>
-                            <button type="submit" class="btn btn-primary col-md-12">Cadastrar</button>
+                            <button id="btCadastrar" type="submit" class="btn btn-primary col-md-12">Cadastrar</button>
                         </form>
 
                         <div class="text-center mt-3">
-                            Já sou cadastrado? <a href="login.html">Faça login aqui</a>
+                            Já possui cadastro? <a href="login">Faça login aqui</a>
                         </div>
                     </div>
                 </div>

@@ -48,19 +48,19 @@ form.addEventListener('submit', function (event) {
   if (isValid) {
     $.ajax({
       type: "POST",
-      url: "/../php/login.php",
+      url: "/php/login.php",
       data: {
         inputEmail: emailInputJs.value,
         inputPassword: passwordInputJs.value,
       },
       success: function (response) {
-        console.log(response);
+        // console.log(response);
         if (!response.success) {
           $(validationDiv).text(response.message).removeClass("text-success").addClass("text-danger");
         } else {
+          console.log('tetete')
           // redirecionar
-          console.log('redirecionar')
-          window.open('/html/traducao.html')
+          window.location.href = '/'
         }
       },
       error: function () {

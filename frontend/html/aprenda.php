@@ -27,38 +27,7 @@
 
 <body>
     <!-- TOPO -->
-    <header>
-        <!-- NAVBAR RESPONSIVA -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="nav-logo">
-                <a class="navbar-brand navtitle" href="/">
-                    ASL <i class="fa-solid fa-language"></i>
-                </a>
-            </div>
-
-            <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-item nav-link active ml-4" href="/">Início</a>
-                    <a class="nav-item nav-link ml-4" href="../html/traducao.html">Tradução</a>
-                    <a class="nav-item nav-link ml-4" href="/#secao1">Conheça</a>
-                    <a class="nav-item nav-link ml-4" href="../html/aprenda.html">Aprenda</a>
-                    <a class="nav-item nav-link ml-4" href="/#secao2">Sobre</a>
-                    <hr class="linhabar d-lg-none w-100 my-2">
-                </div>
-                <br>
-                <a href="../html/login.html" target="_blank">
-                    <button type="button" class="btn btn-outline-secondary um ml-4 mr-2">Entrar</button>
-                </a><br>
-                <a href="../html/cadastrar.html" target="_blank">
-                    <button type="button" class="btn btn-outline-secondary dois mr-4">Cadastre-se</button>
-                </a>
-            </div>
-        </nav>
-    </header>
+    <?php include 'utils/navbar.php'; ?>
 
 
 
@@ -86,7 +55,7 @@
                             <span class="material-symbols-outlined">workspace_premium</span>
                         </p>
                         <p class="card-text">Duração: 12 Horas</p>
-                        <a href="../html/IndexVideos/VideoInterprete.html" target="_blank" class="btn btn-primary">Ver
+                        <a href="../html/IndexVideos/VideoInterprete" class="btn btn-primary">Ver
                             mais</a>
                     </div>
                 </div>
@@ -101,7 +70,7 @@
                             <span class="material-symbols-outlined">workspace_premium</span>
                         </p>
                         <p class="card-text">Duração: 22 Horas</p>
-                        <a href="../html/IndexVideos/ASLAmericano.html" target="_blank" class="btn btn-primary">Ver
+                        <a href="../html/IndexVideos/ASLAmericano" class="btn btn-primary">Ver
                             mais</a>
                     </div>
                 </div>
@@ -116,7 +85,7 @@
                             <span class="material-symbols-outlined">workspace_premium</span>
                         </p>
                         <p class="card-text">Duração: 8 Horas</p>
-                        <a href="../html/IndexVideos/leituraLabial.html" target="_blank" class="btn btn-primary">Ver
+                        <a href="../html/IndexVideos/leituraLabial" class="btn btn-primary">Ver
                             mais</a>
                     </div>
                 </div>
@@ -124,35 +93,9 @@
         </div>
     </div>
 
-
-
-
     <!-- Rodapé da página -->
-    <footer class="footer baixo py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>ASL Libras</h4>
-                    <ul class="list-unstyled">
-                        <li><a class="footerA" href="#">Sobre nós</a></li>
-                        <li><a class="footerA" href="#">Contato</a></li>
-                        <li><a class="footerA" href="#">Termos de uso</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contatos</h4>
-                    <p>Telefone: (11) 1234-5678</p>
-                    <p>E-mail: contato@asl.com</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Siga-nos</h4>
-                    <button class="btnFooter"><i class="fa-brands btns fa-instagram"></i></button>
-                    <button class="btnFooter"><i class="fa-brands btns fa-square-facebook"></i></button>
-                    <button class="btnFooter"><i class="fa-brands btns fa-youtube"></i></button>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php require_once('utils/footer.php') ?>
+
 </body>
 
 </html>

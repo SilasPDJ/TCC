@@ -23,38 +23,7 @@
 
 <body>
     <!-- TOPO -->
-    <header>
-        <!-- NAVBAR RESPONSIVA -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="nav-logo">
-                <a class="navbar-brand navtitle" href="/">
-                    ASL <i class="fa-solid fa-language"></i>
-                </a>
-            </div>
-
-            <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-item nav-link active ml-4" href="/">Início</a>
-                    <a class="nav-item nav-link ml-4" href="../html/traducao.html">Tradução</a>
-                    <a class="nav-item nav-link ml-4" href="/#secao1">Conheça</a>
-                    <a class="nav-item nav-link ml-4" href="../html/aprenda.html">Aprenda</a>
-                    <a class="nav-item nav-link ml-4" href="/#secao2">Sobre</a>
-                    <hr class="linhabar d-lg-none w-100 my-2">
-                </div>
-                <br>
-                <a href="../html/login.html" target="_blank">
-                    <button type="button" class="btn btn-outline-secondary um ml-4 mr-2">Entrar</button>
-                </a><br>
-                <a href="../html/cadastrar.html" target="_blank">
-                    <button type="button" class="btn btn-outline-secondary dois mr-4">Cadastre-se</button>
-                </a>
-            </div>
-        </nav>
-    </header>
+    <?php include 'utils/navbar.php'; ?>
 
     <!-- CONTEÚDO -->
     <main class="traducao-Conteudo">
@@ -94,7 +63,7 @@
         </div>
 
         <div class="container information">
-            <div class="Conteudos row">
+            <div class="Conteudos row mb-4 pb-4">
                 <div class="primeiroConteudo col-md-6">
                     <h2>Por que aprender a traduzir de Libras para ASL?</h2>
                     <p class="resposta">A Língua Brasileira de Sinais (Libras) é uma língua de sinais utilizada
@@ -114,32 +83,8 @@
         </div>
     </main>
 
-    <!-- PARTE DE BAIXO -->
-    <footer class="footer baixo py-3">
-        <div class="container">
-            <div class="row itens">
-                <div class="col-md-4">
-                    <h4>ASL Libras</h4>
-                    <ul class="list-unstyled">
-                        <li><a class="footerA" href="#">Sobre nós</a></li>
-                        <li><a class="footerA" href="#">Contato</a></li>
-                        <li><a class="footerA" href="#">Termos de uso</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contatos</h4>
-                    <p>Telefone: (11) 1234-5678</p>
-                    <p>E-mail: contato@asl.com</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Siga-nos</h4>
-                    <button class="btnFooter"><i class="fa-brands btns fa-instagram"></i></button>
-                    <button class="btnFooter"><i class="fa-brands btns fa-square-facebook"></i></button>
-                    <button class="btnFooter"><i class="fa-brands btns fa-youtube"></i></button>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Rodapé da página -->
+    <?php require_once('utils/footer.php') ?>
 
     <script src="../Js/traducao.js"></script>
     <script src="../Js/libra.js"></script>

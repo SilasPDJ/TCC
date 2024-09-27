@@ -1,3 +1,6 @@
+<?php require_once('utils/security/redirecionar_index.php') ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +54,7 @@
 
                             <button type="submit" class="btn btn-primary btn-block">Entrar</button>
                             <button type="button" class="btn btn-outline-secondary um btn-block"
-                                onclick="window.location.href='/html/cadastrar.html'">Cadastrar</button>
+                                onclick="window.location.href='/html/cadastro'">Cadastrar</button>
                             <!-- btn btn-outline-secondary um ml-4 mr-2 -->
                         </form>
                     </div>
