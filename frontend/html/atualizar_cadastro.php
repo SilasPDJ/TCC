@@ -105,14 +105,6 @@ $userData = $_SESSION['logged_user'];
                                 </div>
                                 <button id="btAtualizarDados" type="submit" class="btn btn-primary col-md-12">Atualizar Dados</button>
                             </form>
-                            <div class="text-center mt-4" id="validationMessage">
-                                <!-- Alerta Bootstrap -->
-                                <div class="alert alert-dismissible fade show" style="display: none;" role="alert">
-                                    <span id="alertText"></span>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
@@ -171,16 +163,22 @@ $userData = $_SESSION['logged_user'];
 
                                 <button id="btAtualizarSenha" type="submit" class="btn btn-primary col-md-12">Alterar Senha</button>
                             </form>
+                            <div class="text-center mt-4 text-danger" id="validationMessage">
+                                <!-- Alerta Bootstrap -->
+                                <div class="mt-4" id="passwordMatchMessage"></div>
+                                <div class="alert alert-dismissible fade show" style="display: none;" role="alert">
+                                    <span id="alertText"></span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+                            </div>
                         </div>
                         <!-- <div class="text-center">
                             Deseja cancelar? <a href="/">Clique aqui para voltar</a>
                         </div> -->
-                        <div class="mt-4" id="passwordMatchMessage">
-
-                        </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>

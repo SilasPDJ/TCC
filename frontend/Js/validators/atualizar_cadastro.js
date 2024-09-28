@@ -28,24 +28,6 @@ const confirmNewPasswordInput = document.querySelector("#inputConfirmNewPassword
 const feedbackDiv = document.querySelector("#validationMessage");
 const passwordMatchDiv = document.querySelector("#passwordMatchMessage");
 
-// Função para validar os dados pessoais
-function validatePersonalData() {
-  const inputs = [nameInput, surnameInput, emailInput, userInput];
-  let isValid = true;
-
-  inputs.forEach(input => {
-    if (input.value.trim() === "") {
-      input.classList.add("is-invalid");
-      isValid = false;
-    } else {
-      input.classList.remove("is-invalid");
-    }
-  });
-
-  return isValid;
-}
-
-
 // Validando os inputs ao digitar
 function validaInputsAoDigitar(inputs, button) {
   $(inputs).on("input change blur", function (event) {
@@ -222,10 +204,11 @@ atualizarSenhaForm.addEventListener("submit", function (event) {
       url: "../php/atualizar_senha.php",
       data: {
         inputOldPassword: oldPasswordInput.value,
-        inputNewPassword: newPasswordInput.value,
+        inputPassword: newPasswordInput.value,
+        inputConfirmPassword: confirmNewPasswordInput.value
       },
       success: function (response) {
-        alert('hello')
+        console.log("Resposta do servidor:", response);
         if (!response.success) {
           let errorMessage = "";
           for (let key in response) {
@@ -233,6 +216,7 @@ atualizarSenhaForm.addEventListener("submit", function (event) {
               errorMessage += response[key] + "<br/>";
             }
           }
+          console.log(errorMessage)
           feedbackDiv.innerHTML = errorMessage;
         } else {
           feedbackDiv.innerHTML = "Senha atualizada com sucesso!";
@@ -241,9 +225,12 @@ atualizarSenhaForm.addEventListener("submit", function (event) {
           // recarregaNavbar()
         }
       },
-      error: function () {
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.error("Erro ao enviar o formulário:", textStatus, errorThrown);
+        console.error("Resposta do servidor:", jqXHR.responseText);
         alert("Erro ao enviar o formulário via AJAX.");
-      },
+      }
+
     });
   }
 });
