@@ -1,11 +1,5 @@
 <?php
-require_once('conexao.php');
-require_once('recuperar_dados_usuario.php');
-
-
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+require_once('utils.php');
 
 // Inicialize um array para armazenar a resposta
 $response = array();
@@ -15,6 +9,7 @@ $inputName = $_POST['inputName'];
 $inputSurname = $_POST['inputSurname'];
 $inputEmail = $_POST['inputEmail'];
 $inputUser = $_POST['inputUser'];
+$inputPassword = $_POST['inputPassword'];
 $termosUso = $_POST['termosUso'] === 'true' ? 1 : 0;
 
 // --- Verifica se as variáveis estão definidas e não vazias
@@ -34,15 +29,16 @@ if (!isset($inputUser) || empty($inputUser)) {
     $response['inputUser'] = "Preencha o campo nome de usuário.";
 }
 
-// Verificação dos termos de uso
-if ($termosUso !== 1) {
-    $response['termosUso'] = "Você deve aceitar os termos de uso.";
-}
 
 // Atualiza os dados do usuário
 if (empty($response)) {
-    $userId = $_SESSION['logged_user']['id']; // Obtém o ID do usuário da sessão
-    if (atualizarDadosUsuario($conexao, $userId, $inputName, $inputSurname, $inputEmail, $inputUser, $termosUso)) {
+    $userId = $_SESSION['logged_user']['id'];
+    $senhaBuscada = buscarSenhaAtual($conexao, $userId) ?? '';
+
+    if (!$senhaBuscada || !password_verify($inputPassword, $senhaBuscada)) {
+        $response['success'] = false;
+        $response['message'] = "Erro ao confirmar a atualização de dados";
+    } else if (atualizarDadosUsuario($conexao, $userId, $inputName, $inputSurname, $inputEmail, $inputUser, $termosUso)) {
         $response['success'] = true;
         $response['message'] = "Dados atualizados com sucesso.";
 

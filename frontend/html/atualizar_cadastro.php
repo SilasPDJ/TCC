@@ -103,8 +103,31 @@ $userData = $_SESSION['logged_user'];
                                             placeholder="Digite seu Usuário" value="<?php echo htmlspecialchars($userData['nome_de_usuario']); ?>" required>
                                     </div>
                                 </div>
+                                <div class="form-row" id="password-group">
+                                    <div class="form-group col-md-12">
+                                        <label for="inputPassword">Senha atual</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" name="inputPassword"
+                                                id="inputPassword" placeholder="Digite sua senha para confirmar" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-fw fa-eye field_icon toggle-password"
+                                                        toggle="#inputPassword"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <button id="btAtualizarDados" type="submit" class="btn btn-primary col-md-12">Atualizar Dados</button>
                             </form>
+                            <div class="text-center mt-4" id="validationMessageData">
+                                <!-- Alerta Bootstrap -->
+                                <div class="alert alert-dismissible fade show" style="display: none;" role="alert">
+                                    <span id="alertText"></span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
@@ -114,7 +137,7 @@ $userData = $_SESSION['logged_user'];
                             <form id="atualizar-senha-form">
                                 <h5 class="mt-4">Alterar Senha</h5>
                                 <div class="form-row">
-                                    <div class="form-group col-md-12" id="old-password-group">
+                                    <div class="form-group col-md-12" id="password-group">
                                         <label for="inputOldPassword">Senha Antiga</label>
                                         <div class="input-group">
                                             <input type="password" class="form-control" name="inputOldPassword"
@@ -163,9 +186,9 @@ $userData = $_SESSION['logged_user'];
 
                                 <button id="btAtualizarSenha" type="submit" class="btn btn-primary col-md-12">Alterar Senha</button>
                             </form>
-                            <div class="text-center mt-4 text-danger" id="validationMessage">
+                            <div class="mt-2 text-danger" id="passwordMatchMessage"></div>
+                            <div class="text-center mt-2" id="validationMessagePswd">
                                 <!-- Alerta Bootstrap -->
-                                <div class="mt-4" id="passwordMatchMessage"></div>
                                 <div class="alert alert-dismissible fade show" style="display: none;" role="alert">
                                     <span id="alertText"></span>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -214,6 +237,7 @@ $userData = $_SESSION['logged_user'];
             $("#btnAtualizarDados").click();
         });
     </script>
+
 
 </body>
 

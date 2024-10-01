@@ -18,6 +18,7 @@ const nameInput = document.querySelector("#inputName");
 const surnameInput = document.querySelector("#inputSurname");
 const emailInput = document.querySelector("#inputEmail");
 const userInput = document.querySelector("#inputUser");
+const passwordInput = document.querySelector("#inputPassword");
 
 // Seleciona os campos do formulário de alteração de senha
 const oldPasswordInput = document.querySelector("#inputOldPassword");
@@ -25,7 +26,8 @@ const newPasswordInput = document.querySelector("#inputNewPassword");
 const confirmNewPasswordInput = document.querySelector("#inputConfirmNewPassword");
 
 // Divs para feedback
-const feedbackDiv = document.querySelector("#validationMessage");
+const feedbackDivData = document.querySelector("#validationMessageData");
+const feedbackDivPswd = document.querySelector("#validationMessagePswd");
 const passwordMatchDiv = document.querySelector("#passwordMatchMessage");
 
 // Validando os inputs ao digitar
@@ -76,11 +78,8 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv) {
     // Validando critérios de senha
     const minLength = 8;
 
-    // Limpa as classes de feedback
-    $(matchDiv).removeClass("text-success").addClass("text-danger");
-
     if (senha !== confirmarSenha && confirmarSenha) {
-      feedbackArray.push("As senhas não correspondem.");
+      feedbackArray.push("A confirmação da nova senha não corresponde.");
     }
     if (senha.length < minLength) {
       feedbackArray.push("Senha deve conter no mínimo 8 caracteres.");
@@ -132,60 +131,9 @@ function recarregaNavbar() {
 // Validação dos formulários ao submeter
 atualizarDadosForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  if (validatePersonalData()) {
-    $.ajax({
-      type: "POST",
-      url: "../php/atualizar_dados.php",
-      data: {
-        inputName: nameInput.value,
-        inputSurname: surnameInput.value,
-        inputEmail: emailInput.value,
-        inputUser: userInput.value,
-        termosUso: true
-
-      },
-      success: function (response) {
-        // Limpa o feedback anterior
-        feedbackDiv.innerHTML = "";
-        feedbackDiv.classList.remove("alert", "alert-success", "alert-danger"); // Remove classes de alerta anteriores
-
-        if (!response.success) {
-          let errorMessage = "";
-          for (let key in response) {
-            if (key !== "success") {
-              errorMessage += response[key] + "<br/>";
-            }
-          }
-          feedbackDiv.innerHTML = errorMessage;
-          feedbackDiv.classList.add("alert", "alert-danger");
-        } else {
-          feedbackDiv.innerHTML = "Dados atualizados com sucesso!";
-          feedbackDiv.classList.add("alert", "alert-success");
-          recarregaNavbar()
-        }
-
-        // Exibe o feedback
-        feedbackDiv.style.display = "block"; // Certifica-se de que a div está visível
-
-        // Define um temporizador para ocultar a mensagem após 3 segundos
-        setTimeout(function () {
-          feedbackDiv.style.display = "none"; // Oculta a div após 3 segundos
-        }, 7000);
-      },
-
-
-      error: function () {
-        alert("Erro ao enviar o formulário via AJAX.");
-      },
-    });
-  }
-});
-
-atualizarSenhaForm.addEventListener("submit", function (event) {
-  event.preventDefault();
 
   const $inputs = $(this).find("input");
-
+  const feedbackDiv = feedbackDivData;
   let isValid = true;
 
   $inputs.each(function () {
@@ -201,7 +149,65 @@ atualizarSenhaForm.addEventListener("submit", function (event) {
   if (isValid) {
     $.ajax({
       type: "POST",
-      url: "../php/atualizar_senha.php",
+      url: "../php/atualizar/dados.php",
+      data: {
+        inputName: nameInput.value,
+        inputSurname: surnameInput.value,
+        inputEmail: emailInput.value,
+        inputUser: userInput.value,
+        inputPassword: passwordInput.value,
+        termosUso: true
+
+      },
+      success: function (response) {
+        if (!response.success) {
+          let errorMessage = "";
+          for (let key in response) {
+            if (key !== "success") {
+              errorMessage += response[key] + "<br/>";
+            }
+          }
+          console.log(errorMessage, 'hi')
+          feedbackDiv.innerHTML = errorMessage;
+          feedbackDiv.classList.remove("alert", "alert-success", "alert-dismissible");
+          feedbackDiv.classList.add("alert", "alert-danger", "alert-dismissible");
+        } else {
+          feedbackDiv.innerHTML = "Dados atualizados com sucesso!";
+          feedbackDiv.classList.remove("alert", "alert-danger", "alert-dismissible");
+          feedbackDiv.classList.add("alert", "alert-success", "alert-dismissible");
+          recarregaNavbar()
+        }
+      },
+
+
+      error: function () {
+        alert("Erro ao enviar o formulário via AJAX.");
+      },
+    });
+  }
+});
+
+atualizarSenhaForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const $inputs = $(this).find("input");
+  const feedbackDiv = feedbackDivPswd;
+  let isValid = true;
+
+  $inputs.each(function () {
+    const $input = $(this);
+
+    // Valida se o valor está vazio...
+    const trimmedValue = $input.val().trim();
+    isValid = trimmedValue !== "";
+    $input.toggleClass('is-invalid', !isValid);
+
+  });
+
+  if (isValid) {
+    $.ajax({
+      type: "POST",
+      url: "../php/atualizar/senha.php",
       data: {
         inputOldPassword: oldPasswordInput.value,
         inputPassword: newPasswordInput.value,
@@ -216,12 +222,13 @@ atualizarSenhaForm.addEventListener("submit", function (event) {
               errorMessage += response[key] + "<br/>";
             }
           }
-          console.log(errorMessage)
           feedbackDiv.innerHTML = errorMessage;
+          feedbackDiv.classList.remove("alert", "alert-success", "alert-dismissible");
+          feedbackDiv.classList.add("alert", "alert-danger", "alert-dismissible");
         } else {
           feedbackDiv.innerHTML = "Senha atualizada com sucesso!";
-          feedbackDiv.classList.remove("text-danger");
-          feedbackDiv.classList.add("text-success");
+          feedbackDiv.classList.remove("alert", "alert-danger", "alert-dismissible");
+          feedbackDiv.classList.add("alert", "alert-success", "alert-dismissible");
           // recarregaNavbar()
         }
       },

@@ -88,12 +88,13 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv) {
 
     // Validando critérios de senha
     const minLength = 8;
+    console.log('tetete')
 
     // Limpa as classes de feedback
     $(matchDiv).removeClass("text-success").addClass("text-danger");
 
     if (senha !== confirmarSenha && confirmarSenha) {
-      feedbackArray.push("As senhas não correspondem.");
+      feedbackArray.push("A confirmação da senha não corresponde.");
     }
     if (senha.length < minLength) {
       feedbackArray.push("Senha deve conter no mínimo 8 caracteres.");
@@ -122,6 +123,7 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv) {
       feedbackText += `${feedback}<br/>`;
     }
     feedbackText += "<br/>";
+    console.log(feedbackText)
 
     $(matchDiv).html(feedbackText);
   });
