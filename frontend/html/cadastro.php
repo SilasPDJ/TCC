@@ -44,6 +44,15 @@
                                 </div>
                             </div>
                             <div class="form-row">
+                                <div class="form-group col-md-12" id="birthdate-group">
+                                    <label for="inputBornDate">Data de Nascimento</label>
+                                    <input type="date" class="form-control" name="inputBornDate" id="inputBornDate" required>
+                                    <div class="invalid-feedback">
+                                        Data de Nascimento deve ser anterior à data atual. </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
                                 <div class="form-group col-md-12" id="email-group">
                                     <label for="inputEmail">E-mail</label>
                                     <input type="email" class="form-control" name="inputEmail" id="inputEmail"

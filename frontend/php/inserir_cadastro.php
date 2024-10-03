@@ -12,6 +12,7 @@ $response = array();
 // Receba os dados do JavaScript
 $inputName = $_POST['inputName'];
 $inputSurname = $_POST['inputSurname'];
+$inputBornDate = $_POST['inputBornDate'];
 $inputEmail = $_POST['inputEmail'];
 $inputUser = $_POST['inputUser'];
 $inputPassword = $_POST['inputPassword'];
@@ -25,6 +26,9 @@ if (!isset($inputName) || empty($inputName)) {
 
 if (!isset($inputSurname) || empty($inputSurname)) {
     $response['inputSurname'] = "Preencha o campo sobrenome.";
+}
+if (!isset($inputBornDate) || empty($inputBornDate)) {
+    $response['inputSurname'] = "Preencha o campo data de nascimento.";
 }
 
 if (!isset($inputEmail) || empty($inputEmail)) {
@@ -59,7 +63,7 @@ if ($termosUso !== 1) {
 
 // Insira o novo usuário
 if (empty($response)) {
-    if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $inputEmail, $inputUser, $inputPassword, $termosUso)) {
+    if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $data_nascimento, $inputEmail, $inputUser, $inputPassword, $termosUso)) {
         // Recuperar o ID do novo usuário inserido
         $emailId = buscaEmailUnico($conexao, $inputEmail);
 
@@ -87,12 +91,12 @@ function emailJaCadastrado($conexao, $email)
 }
 
 // Função para inserir o novo usuário
-function inserirNovoUsuario($conexao, $nome, $sobrenome, $email, $nomeDeUsuario, $senha, $termosAceitos)
+function inserirNovoUsuario($conexao, $nome, $sobrenome, $data_nascimento, $email, $nomeDeUsuario, $senha, $termosAceitos)
 {
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuarios (nome, sobrenome, email, nome_de_usuario, senha, termos_aceitos)
-            VALUES ('$nome', '$sobrenome', '$email', '$nomeDeUsuario', '$senhaHash', '$termosAceitos')";
+    $sql = "INSERT INTO usuarios (nome, sobrenome, data_nascimento, email, nome_de_usuario, senha, termos_aceitos)
+            VALUES ('$nome', '$sobrenome', '$data_nascimento', '$email', '$nomeDeUsuario', '$senhaHash', '$termosAceitos')";
     return $conexao->query($sql);
 }
 

@@ -8,6 +8,7 @@ form.method = "POST"
 // Seleciona os campos do formulário
 const nameInput = document.querySelector("#inputName");
 const surnameInput = document.querySelector("#inputSurname");
+const bornDateInput = document.querySelector("#inputBornDate");
 const emailInput = document.querySelector("#inputEmail");
 const userInput = document.querySelector("#inputUser");
 const passwordInput = document.querySelector("#inputPassword");
@@ -52,8 +53,26 @@ $inputs.on("input change blur", function (event) {
     const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     return regex.test(email);
   };
+  const isValidBornDate = function (date) {
+    const today = new Date();
+    const birthDate = new Date(date);
 
-  if ($input.is(":invalid") || (this === emailInput && !isValidEmail(value)) || value === "") {
+    // Verifica se a data de nascimento é válida
+    if (isNaN(birthDate.getTime())) {
+      return false;
+    }
+
+    // Verifica se a data de nascimento é uma data futura
+    return birthDate < today;
+  };
+  console.log(bornDateInput, 'TESTE')
+
+  const isBornDateInvalid = this === bornDateInput && !isValidBornDate(value);
+  const isEmailInvalid = this === emailInput && !isValidEmail(value);
+
+  if ($input.is(":invalid") ||
+    value === "" ||
+    isBornDateInvalid || isEmailInvalid) {
     if (event.type === "blur") {
       $input.addClass("is-invalid");
 
