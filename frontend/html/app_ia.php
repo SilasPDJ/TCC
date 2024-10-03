@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ASL - Tradução de Libras</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
-    <link rel="stylesheet" type="text/css" href="../../css/videos.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="../../Js/videos.js"></script>
@@ -33,7 +31,9 @@
 
         <!-- Botão futurístico -->
         <div class="text-center mt-4">
-            <button id="sendDataBtn" class="btn-futuristic">Começar Treinamento de Gestos</button>
+            <button id="sendDataBtn" class="btn btn-dark btn-lg rounded-pill shadow-lg">
+                Começar Treinamento de Gestos
+            </button>
         </div>
 
         <!-- Informações -->

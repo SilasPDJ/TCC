@@ -63,7 +63,7 @@ $inputs.on("input change blur", function (event) {
   }
 
   // Verificando se todos os inputs são válidos
-  let isFormValid = true; // Inicializa como verdadeiro
+  let isFormValid = true;
   $inputs.each(function () {
     const $input = $(this);
     const value = $input.val().trim();
@@ -79,7 +79,7 @@ $inputs.on("input change blur", function (event) {
 });
 
 
-function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv, otherValidationsDiv) {
+function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv) {
   // O selector dos inputs deve ser em javascript, não jQuery
   $(inputSenha).add(inputConfirmarSenha).on("input", function () {
     feedbackArray = []
@@ -88,12 +88,13 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv, otherValid
 
     // Validando critérios de senha
     const minLength = 8;
+    console.log('tetete')
 
     // Limpa as classes de feedback
     $(matchDiv).removeClass("text-success").addClass("text-danger");
 
     if (senha !== confirmarSenha && confirmarSenha) {
-      feedbackArray.push("As senhas não correspondem.");
+      feedbackArray.push("A confirmação da senha não corresponde.");
     }
     if (senha.length < minLength) {
       feedbackArray.push("Senha deve conter no mínimo 8 caracteres.");
@@ -110,7 +111,7 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv, otherValid
         feedbackArray.push("Senha deve conter pelo menos um número.");
       }
 
-      if (!/[!@#$%^&*(),.?":{}|<>]/.test(senha)) {
+      if (!/[!@#$%^&*'(),.?":{}|<>]/.test(senha)) {
         feedbackArray.push("Senha deve conter pelo menos um caractere especial.");
       }
 
@@ -122,6 +123,7 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv, otherValid
       feedbackText += `${feedback}<br/>`;
     }
     feedbackText += "<br/>";
+    console.log(feedbackText)
 
     $(matchDiv).html(feedbackText);
   });
