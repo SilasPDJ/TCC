@@ -13,8 +13,7 @@ const emailInput = document.querySelector("#inputEmail");
 const userInput = document.querySelector("#inputUser");
 const passwordInput = document.querySelector("#inputPassword");
 const confirmPasswordInput = document.querySelector("#inputConfirmPassword");
-const termosUsoCheckbox = document.querySelector("#termosUso");
-
+// const termosUsoCheckbox = document.querySelector("#termosUso");
 const feedbackErrorDiv = document.querySelector("#feedback-error")
 
 // --- Para testes
@@ -65,7 +64,6 @@ $inputs.on("input change blur", function (event) {
     // Verifica se a data de nascimento é uma data futura
     return birthDate < today;
   };
-  console.log(bornDateInput, 'TESTE')
 
   const isBornDateInvalid = this === bornDateInput && !isValidBornDate(value);
   const isEmailInvalid = this === emailInput && !isValidEmail(value);
@@ -107,7 +105,6 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv) {
 
     // Validando critérios de senha
     const minLength = 8;
-    console.log('tetete')
 
     // Limpa as classes de feedback
     $(matchDiv).removeClass("text-success").addClass("text-danger");
@@ -175,17 +172,18 @@ form.addEventListener("submit", function (event) {
   // Validação direto do php...
 
   if (isValid) {
+    console.log('isValid')
     $.ajax({
       type: "POST",
-      url: "../php/inserir_cadastro.php",
+      url: "../../php/inserir_cadastro.php",
       data: {
         inputName: nameInput.value,
         inputSurname: surnameInput.value,
+        inputBornDate: bornDateInput.value,
         inputEmail: emailInput.value,
         inputUser: userInput.value,
         inputPassword: passwordInput.value,
         inputConfirmPassword: confirmPasswordInput.value,
-        termosUso: termosUsoCheckbox.checked,
       },
       success: function (response) {
         console.log(response.success)
@@ -202,8 +200,9 @@ form.addEventListener("submit", function (event) {
           window.location.href = '/'; // ou o caminho correto
         }
       },
-      error: function () {
-        alert("Erro ao enviar o formulário via AJAX.");
+      error: function (e) {
+        let errorMessage = "Erro ao enviar o formulário"
+        $(validationDiv).html(errorMessage).removeClass("text-success").addClass("text-danger");
       },
     });
   } else {

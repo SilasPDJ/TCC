@@ -17,7 +17,7 @@ $inputEmail = $_POST['inputEmail'];
 $inputUser = $_POST['inputUser'];
 $inputPassword = $_POST['inputPassword'];
 $inputConfirmPassword = $_POST['inputConfirmPassword'];
-$termosUso = $_POST['termosUso'] === 'true' ? 1 : 0;
+$termosUso = 1;
 
 // --- Verifica se as variáveis estão definidas e não vazias
 if (!isset($inputName) || empty($inputName)) {
@@ -57,13 +57,9 @@ if (emailJaCadastrado($conexao, $inputEmail)) {
     $response['inputEmail'] = "Verifique as informações e tente novamente!";
 }
 
-if ($termosUso !== 1) {
-    $response['termosUso'] = "Você deve aceitar os termos de uso.";
-}
-
 // Insira o novo usuário
 if (empty($response)) {
-    if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $data_nascimento, $inputEmail, $inputUser, $inputPassword, $termosUso)) {
+    if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $inputBornDate, $inputEmail, $inputUser, $inputPassword, $termosUso)) {
         // Recuperar o ID do novo usuário inserido
         $emailId = buscaEmailUnico($conexao, $inputEmail);
 
@@ -73,7 +69,8 @@ if (empty($response)) {
         $response['success'] = true;
         $response['message'] = "Usuário criado com sucesso.";
     } else {
-        $response['inputUser'] = "Erro ao inserir usuário.";
+        $response['success'] = false;
+        $response['message'] = "Erro ao inserir usuário.";
     }
 } else {
     $response['success'] = false;

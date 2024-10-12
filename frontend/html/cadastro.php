@@ -46,7 +46,8 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12" id="birthdate-group">
                                     <label for="inputBornDate">Data de Nascimento</label>
-                                    <input type="date" class="form-control" name="inputBornDate" id="inputBornDate" required>
+                                    <input type="date" class="form-control" name="inputBornDate" id="inputBornDate"
+                                        placeholder="Digite sua data de nascimento" required>
                                     <div class="invalid-feedback">
                                         Data de Nascimento deve ser anterior à data atual. </div>
                                 </div>
@@ -99,12 +100,6 @@
                             </div>
 
                             <div class="form-check mb-3">
-                                <input type="checkbox" class="form-check-input" name="termosUso" id="termosUso">
-                                <div class="form-group" id="termosUso-group">
-                                    <label class="form-check-label" for="termosUso">
-                                        Eu aceito os <a href="#">Termos de Uso</a>
-                                    </label>
-                                </div>
                                 <div id="passwordMatchMessage" class="mt-1"></div>
                                 <div id="validationMessage"></div>
                             </div>

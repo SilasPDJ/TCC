@@ -120,7 +120,7 @@ ValidatePasswords(newPasswordInput, confirmNewPasswordInput, passwordMatchDiv)
 
 function recarregaNavbar() {
   $.ajax({
-    url: '../html/utils/navbar.php',
+    url: '../../html/utils/navbar.php',
     success: function (navbarContent) {
       $('header').html(navbarContent);
       console.log(navbarContent, 'hihi')
@@ -149,7 +149,7 @@ atualizarDadosForm.addEventListener("submit", function (event) {
   if (isValid) {
     $.ajax({
       type: "POST",
-      url: "../php/atualizar/dados.php",
+      url: "../../php/atualizar/dados.php",
       data: {
         inputName: nameInput.value,
         inputSurname: surnameInput.value,
@@ -207,7 +207,7 @@ atualizarSenhaForm.addEventListener("submit", function (event) {
   if (isValid) {
     $.ajax({
       type: "POST",
-      url: "../php/atualizar/senha.php",
+      url: "../../php/atualizar/senha.php",
       data: {
         inputOldPassword: oldPasswordInput.value,
         inputPassword: newPasswordInput.value,
