@@ -44,17 +44,20 @@
                                 </div>
                             </div>
                             <div class="form-row">
+                                <div class="form-group col-md-12" id="birthdate-group">
+                                    <label for="inputBornDate">Data de Nascimento</label>
+                                    <input type="date" class="form-control" name="inputBornDate" id="inputBornDate"
+                                        placeholder="Digite sua data de nascimento" required>
+                                    <div class="invalid-feedback">
+                                        Data de Nascimento deve ser anterior à data atual. </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
                                 <div class="form-group col-md-12" id="email-group">
                                     <label for="inputEmail">E-mail</label>
                                     <input type="email" class="form-control" name="inputEmail" id="inputEmail"
                                         placeholder="Digite seu e-mail" required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-12" id="user-group">
-                                    <label for="inputUser">Nome de Usuário</label>
-                                    <input type="text" class="form-control" name="inputUser" id="inputUser"
-                                        placeholder="Digite seu Usuário" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -89,20 +92,14 @@
                                 </div>
                             </div>
 
-                            <div class="form-check mb-3">
-                                <input type="checkbox" class="form-check-input" name="termosUso" id="termosUso">
-                                <div class="form-group" id="termosUso-group">
-                                    <label class="form-check-label" for="termosUso">
-                                        Eu aceito os <a href="#">Termos de Uso</a>
-                                    </label>
-                                </div>
+                            <button id="btCadastrar" type="submit" class="btn btn-primary col-md-12">Cadastrar</button>
+                            <div class="form-check mt-1">
                                 <div id="passwordMatchMessage" class="mt-1"></div>
                                 <div id="validationMessage"></div>
                             </div>
-                            <button id="btCadastrar" type="submit" class="btn btn-primary col-md-12">Cadastrar</button>
                         </form>
 
-                        <div class="text-center mt-3">
+                        <div class="text-center mt-1">
                             Já possui cadastro? <a href="login">Faça login aqui</a>
                         </div>
                     </div>

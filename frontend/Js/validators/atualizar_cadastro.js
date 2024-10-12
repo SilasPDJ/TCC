@@ -16,8 +16,8 @@ atualizarSenhaForm.method = "POST";
 // Seleciona os campos do formulário de atualização de dados
 const nameInput = document.querySelector("#inputName");
 const surnameInput = document.querySelector("#inputSurname");
+const bornDateInput = document.querySelector("#inputBornDate");
 const emailInput = document.querySelector("#inputEmail");
-const userInput = document.querySelector("#inputUser");
 const passwordInput = document.querySelector("#inputPassword");
 
 // Seleciona os campos do formulário de alteração de senha
@@ -120,7 +120,7 @@ ValidatePasswords(newPasswordInput, confirmNewPasswordInput, passwordMatchDiv)
 
 function recarregaNavbar() {
   $.ajax({
-    url: '../html/utils/navbar.php',
+    url: '../../html/utils/navbar.php',
     success: function (navbarContent) {
       $('header').html(navbarContent);
       console.log(navbarContent, 'hihi')
@@ -149,12 +149,12 @@ atualizarDadosForm.addEventListener("submit", function (event) {
   if (isValid) {
     $.ajax({
       type: "POST",
-      url: "../php/atualizar/dados.php",
+      url: "../../php/atualizar/dados.php",
       data: {
         inputName: nameInput.value,
         inputSurname: surnameInput.value,
+        inputBornDate: bornDateInput.value,
         inputEmail: emailInput.value,
-        inputUser: userInput.value,
         inputPassword: passwordInput.value,
         termosUso: true
 
@@ -207,7 +207,7 @@ atualizarSenhaForm.addEventListener("submit", function (event) {
   if (isValid) {
     $.ajax({
       type: "POST",
-      url: "../php/atualizar/senha.php",
+      url: "../../php/atualizar/senha.php",
       data: {
         inputOldPassword: oldPasswordInput.value,
         inputPassword: newPasswordInput.value,

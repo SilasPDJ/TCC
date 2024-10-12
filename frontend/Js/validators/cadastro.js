@@ -8,12 +8,11 @@ form.method = "POST"
 // Seleciona os campos do formulário
 const nameInput = document.querySelector("#inputName");
 const surnameInput = document.querySelector("#inputSurname");
+const bornDateInput = document.querySelector("#inputBornDate");
 const emailInput = document.querySelector("#inputEmail");
-const userInput = document.querySelector("#inputUser");
 const passwordInput = document.querySelector("#inputPassword");
 const confirmPasswordInput = document.querySelector("#inputConfirmPassword");
-const termosUsoCheckbox = document.querySelector("#termosUso");
-
+// const termosUsoCheckbox = document.querySelector("#termosUso");
 const feedbackErrorDiv = document.querySelector("#feedback-error")
 
 // --- Para testes
@@ -37,7 +36,6 @@ function setMinLengthPatternAndTitle(inputElement, minLength) {
 }
 setMinLengthPatternAndTitle(nameInput, 3);
 setMinLengthPatternAndTitle(surnameInput, 3);
-setMinLengthPatternAndTitle(userInput, 5);
 
 const $inputs = jQuery(form).find("input");
 let feedbackArray = [];
@@ -52,8 +50,25 @@ $inputs.on("input change blur", function (event) {
     const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     return regex.test(email);
   };
+  const isValidBornDate = function (date) {
+    const today = new Date();
+    const birthDate = new Date(date);
 
-  if ($input.is(":invalid") || (this === emailInput && !isValidEmail(value)) || value === "") {
+    // Verifica se a data de nascimento é válida
+    if (isNaN(birthDate.getTime())) {
+      return false;
+    }
+
+    // Verifica se a data de nascimento é uma data futura
+    return birthDate < today;
+  };
+
+  const isBornDateInvalid = this === bornDateInput && !isValidBornDate(value);
+  const isEmailInvalid = this === emailInput && !isValidEmail(value);
+
+  if ($input.is(":invalid") ||
+    value === "" ||
+    isBornDateInvalid || isEmailInvalid) {
     if (event.type === "blur") {
       $input.addClass("is-invalid");
 
@@ -88,7 +103,6 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv) {
 
     // Validando critérios de senha
     const minLength = 8;
-    console.log('tetete')
 
     // Limpa as classes de feedback
     $(matchDiv).removeClass("text-success").addClass("text-danger");
@@ -156,17 +170,17 @@ form.addEventListener("submit", function (event) {
   // Validação direto do php...
 
   if (isValid) {
+    console.log('isValid')
     $.ajax({
       type: "POST",
-      url: "../php/inserir_cadastro.php",
+      url: "../../php/inserir_cadastro.php",
       data: {
         inputName: nameInput.value,
         inputSurname: surnameInput.value,
+        inputBornDate: bornDateInput.value,
         inputEmail: emailInput.value,
-        inputUser: userInput.value,
         inputPassword: passwordInput.value,
         inputConfirmPassword: confirmPasswordInput.value,
-        termosUso: termosUsoCheckbox.checked,
       },
       success: function (response) {
         console.log(response.success)
@@ -183,8 +197,14 @@ form.addEventListener("submit", function (event) {
           window.location.href = '/'; // ou o caminho correto
         }
       },
-      error: function () {
-        alert("Erro ao enviar o formulário via AJAX.");
+      error: function (e) {
+        let errorMessage;
+        for (let key in response) {
+          if (key !== "success") {
+            errorMessage += response[key] + "<br/>";
+          }
+        }
+        $(validationDiv).html(errorMessage).removeClass("text-success").addClass("text-danger");
       },
     });
   } else {

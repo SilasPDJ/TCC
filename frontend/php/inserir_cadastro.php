@@ -12,11 +12,11 @@ $response = array();
 // Receba os dados do JavaScript
 $inputName = $_POST['inputName'];
 $inputSurname = $_POST['inputSurname'];
+$inputBornDate = $_POST['inputBornDate'];
 $inputEmail = $_POST['inputEmail'];
-$inputUser = $_POST['inputUser'];
 $inputPassword = $_POST['inputPassword'];
 $inputConfirmPassword = $_POST['inputConfirmPassword'];
-$termosUso = $_POST['termosUso'] === 'true' ? 1 : 0;
+$termosUso = 1;
 
 // --- Verifica se as variáveis estão definidas e não vazias
 if (!isset($inputName) || empty($inputName)) {
@@ -26,14 +26,14 @@ if (!isset($inputName) || empty($inputName)) {
 if (!isset($inputSurname) || empty($inputSurname)) {
     $response['inputSurname'] = "Preencha o campo sobrenome.";
 }
+if (!isset($inputBornDate) || empty($inputBornDate)) {
+    $response['inputSurname'] = "Preencha o campo data de nascimento.";
+}
 
 if (!isset($inputEmail) || empty($inputEmail)) {
     $response['inputEmail'] = "Preencha o campo email.";
 }
 
-if (!isset($inputUser) || empty($inputUser)) {
-    $response['inputUser'] = "Preencha o campo nome de usuário.";
-}
 
 if (!isset($inputPassword) || empty($inputPassword)) {
     $response['inputPassword'] = "Preencha o campo senha.";
@@ -53,13 +53,9 @@ if (emailJaCadastrado($conexao, $inputEmail)) {
     $response['inputEmail'] = "Verifique as informações e tente novamente!";
 }
 
-if ($termosUso !== 1) {
-    $response['termosUso'] = "Você deve aceitar os termos de uso.";
-}
-
 // Insira o novo usuário
 if (empty($response)) {
-    if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $inputEmail, $inputUser, $inputPassword, $termosUso)) {
+    if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $inputBornDate, $inputEmail, $inputPassword, $termosUso)) {
         // Recuperar o ID do novo usuário inserido
         $emailId = buscaEmailUnico($conexao, $inputEmail);
 
@@ -69,7 +65,8 @@ if (empty($response)) {
         $response['success'] = true;
         $response['message'] = "Usuário criado com sucesso.";
     } else {
-        $response['inputUser'] = "Erro ao inserir usuário.";
+        $response['success'] = false;
+        $response['message'] = "Erro ao inserir usuário.";
     }
 } else {
     $response['success'] = false;
@@ -87,13 +84,20 @@ function emailJaCadastrado($conexao, $email)
 }
 
 // Função para inserir o novo usuário
-function inserirNovoUsuario($conexao, $nome, $sobrenome, $email, $nomeDeUsuario, $senha, $termosAceitos)
+function inserirNovoUsuario($conexao, $nome, $sobrenome, $data_nascimento, $email, $senha, $termosAceitos)
 {
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuarios (nome, sobrenome, email, nome_de_usuario, senha, termos_aceitos)
-            VALUES ('$nome', '$sobrenome', '$email', '$nomeDeUsuario', '$senhaHash', '$termosAceitos')";
-    return $conexao->query($sql);
+    $sql = "INSERT INTO usuarios (nome, sobrenome, data_nascimento, email, senha, termos_aceitos) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("ssssss", $nome, $sobrenome, $data_nascimento, $email, $senhaHash, $termosAceitos);
+    $result = $stmt->execute(); // Executa a consulta e armazena o resultado
+
+    if ($result) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // Função para buscar o ID do usuário pelo email
