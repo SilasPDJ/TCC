@@ -14,7 +14,6 @@ $inputName = $_POST['inputName'];
 $inputSurname = $_POST['inputSurname'];
 $inputBornDate = $_POST['inputBornDate'];
 $inputEmail = $_POST['inputEmail'];
-$inputUser = $_POST['inputUser'];
 $inputPassword = $_POST['inputPassword'];
 $inputConfirmPassword = $_POST['inputConfirmPassword'];
 $termosUso = 1;
@@ -35,9 +34,6 @@ if (!isset($inputEmail) || empty($inputEmail)) {
     $response['inputEmail'] = "Preencha o campo email.";
 }
 
-if (!isset($inputUser) || empty($inputUser)) {
-    $response['inputUser'] = "Preencha o campo nome de usuário.";
-}
 
 if (!isset($inputPassword) || empty($inputPassword)) {
     $response['inputPassword'] = "Preencha o campo senha.";
@@ -59,7 +55,7 @@ if (emailJaCadastrado($conexao, $inputEmail)) {
 
 // Insira o novo usuário
 if (empty($response)) {
-    if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $inputBornDate, $inputEmail, $inputUser, $inputPassword, $termosUso)) {
+    if (inserirNovoUsuario($conexao, $inputName, $inputSurname, $inputBornDate, $inputEmail, $inputPassword, $termosUso)) {
         // Recuperar o ID do novo usuário inserido
         $emailId = buscaEmailUnico($conexao, $inputEmail);
 
@@ -88,13 +84,20 @@ function emailJaCadastrado($conexao, $email)
 }
 
 // Função para inserir o novo usuário
-function inserirNovoUsuario($conexao, $nome, $sobrenome, $data_nascimento, $email, $nomeDeUsuario, $senha, $termosAceitos)
+function inserirNovoUsuario($conexao, $nome, $sobrenome, $data_nascimento, $email, $senha, $termosAceitos)
 {
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO usuarios (nome, sobrenome, data_nascimento, email, nome_de_usuario, senha, termos_aceitos)
-            VALUES ('$nome', '$sobrenome', '$data_nascimento', '$email', '$nomeDeUsuario', '$senhaHash', '$termosAceitos')";
-    return $conexao->query($sql);
+    $sql = "INSERT INTO usuarios (nome, sobrenome, data_nascimento, email, senha, termos_aceitos) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("ssssss", $nome, $sobrenome, $data_nascimento, $email, $senhaHash, $termosAceitos);
+    $result = $stmt->execute(); // Executa a consulta e armazena o resultado
+
+    if ($result) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // Função para buscar o ID do usuário pelo email

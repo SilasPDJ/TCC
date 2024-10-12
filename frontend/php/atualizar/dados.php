@@ -8,9 +8,9 @@ $response = array();
 $inputName = $_POST['inputName'];
 $inputSurname = $_POST['inputSurname'];
 $inputEmail = $_POST['inputEmail'];
-$inputUser = $_POST['inputUser'];
+$inputBornDate = $_POST['inputBornDate'];
 $inputPassword = $_POST['inputPassword'];
-$termosUso = $_POST['termosUso'] === 'true' ? 1 : 0;
+$termosUso = 1;
 
 // --- Verifica se as variáveis estão definidas e não vazias
 if (!isset($inputName) || empty($inputName)) {
@@ -25,8 +25,8 @@ if (!isset($inputEmail) || empty($inputEmail)) {
     $response['inputEmail'] = "Preencha o campo email.";
 }
 
-if (!isset($inputUser) || empty($inputUser)) {
-    $response['inputUser'] = "Preencha o campo nome de usuário.";
+if (!isset($inputBornDate) || empty($inputBornDate)) {
+    $response['inputSurname'] = "Preencha o campo data de nascimento.";
 }
 
 
@@ -37,8 +37,8 @@ if (empty($response)) {
 
     if (!$senhaBuscada || !password_verify($inputPassword, $senhaBuscada)) {
         $response['success'] = false;
-        $response['message'] = "Erro ao confirmar a atualização de dados";
-    } else if (atualizarDadosUsuario($conexao, $userId, $inputName, $inputSurname, $inputEmail, $inputUser, $termosUso)) {
+        $response['message'] = "Erro ao confirmar a atualização de dados. Senha inválida.";
+    } else if (atualizarDadosUsuario($conexao, $userId, $inputName, $inputSurname, $inputBornDate, $inputEmail, $termosUso)) {
         $response['success'] = true;
         $response['message'] = "Dados atualizados com sucesso.";
 
@@ -51,13 +51,13 @@ if (empty($response)) {
 }
 
 // Função para atualizar os dados do usuário
-function atualizarDadosUsuario($conexao, $id, $nome, $sobrenome, $email, $nomeDeUsuario, $termosAceitos)
+function atualizarDadosUsuario($conexao, $id, $nome, $sobrenome, $data_nascimento, $email, $termosAceitos)
 {
-    $sql = "UPDATE usuarios SET nome = ?, sobrenome = ?, email = ?, nome_de_usuario = ?, termos_aceitos = ?
+    $sql = "UPDATE usuarios SET nome = ?, sobrenome = ?, data_nascimento = ?, email = ?, termos_aceitos = ?
             WHERE id = ?";
 
     $stmt = $conexao->prepare($sql);
-    $stmt->bind_param("sssssi", $nome, $sobrenome, $email, $nomeDeUsuario, $termosAceitos, $id);
+    $stmt->bind_param("sssssi", $nome, $sobrenome, $data_nascimento, $email, $termosAceitos, $id);
 
     return $stmt->execute();
 }

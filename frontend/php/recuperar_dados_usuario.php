@@ -8,7 +8,7 @@ require_once('conexao.php');
 function recuperaDadosUsuario($conexao, $id)
 {
     // Usando prepared statements para evitar SQL injection
-    $sql = "SELECT id, nome, sobrenome, email, nome_de_usuario, termos_aceitos FROM usuarios WHERE id = ?";
+    $sql = "SELECT id, nome, sobrenome, email, data_nascimento, termos_aceitos FROM usuarios WHERE id = ?";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param("i", $id); // "i" indica que o parâmetro é um inteiro
     $stmt->execute();

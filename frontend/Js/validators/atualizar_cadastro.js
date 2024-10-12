@@ -16,8 +16,8 @@ atualizarSenhaForm.method = "POST";
 // Seleciona os campos do formulário de atualização de dados
 const nameInput = document.querySelector("#inputName");
 const surnameInput = document.querySelector("#inputSurname");
+const bornDateInput = document.querySelector("#inputBornDate");
 const emailInput = document.querySelector("#inputEmail");
-const userInput = document.querySelector("#inputUser");
 const passwordInput = document.querySelector("#inputPassword");
 
 // Seleciona os campos do formulário de alteração de senha
@@ -153,8 +153,8 @@ atualizarDadosForm.addEventListener("submit", function (event) {
       data: {
         inputName: nameInput.value,
         inputSurname: surnameInput.value,
+        inputBornDate: bornDateInput.value,
         inputEmail: emailInput.value,
-        inputUser: userInput.value,
         inputPassword: passwordInput.value,
         termosUso: true
 

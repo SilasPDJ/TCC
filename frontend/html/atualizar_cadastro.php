@@ -90,17 +90,19 @@ $userData = $_SESSION['logged_user'];
                                     </div>
                                 </div>
                                 <div class="form-row">
+                                    <div class="form-group col-md-12" id="birthdate-group">
+                                        <label for="inputBornDate">Data de Nascimento</label>
+                                        <input type="date" class="form-control" name="inputBornDate" id="inputBornDate"
+                                            placeholder="Digite sua data de nascimento" value="<?php echo htmlspecialchars($userData['data_nascimento']); ?>" required>
+                                        <div class="invalid-feedback">
+                                            Data de Nascimento deve ser anterior à data atual. </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
                                     <div class="form-group col-md-12" id="email-group">
                                         <label for="inputEmail">E-mail</label>
                                         <input type="email" class="form-control" name="inputEmail" id="inputEmail"
                                             placeholder="Digite seu e-mail" value="<?php echo htmlspecialchars($userData['email']); ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-12" id="user-group">
-                                        <label for="inputUser">Nome de Usuário</label>
-                                        <input type="text" class="form-control" name="inputUser" id="inputUser"
-                                            placeholder="Digite seu Usuário" value="<?php echo htmlspecialchars($userData['nome_de_usuario']); ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-row" id="password-group">

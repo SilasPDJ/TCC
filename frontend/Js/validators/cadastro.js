@@ -10,7 +10,6 @@ const nameInput = document.querySelector("#inputName");
 const surnameInput = document.querySelector("#inputSurname");
 const bornDateInput = document.querySelector("#inputBornDate");
 const emailInput = document.querySelector("#inputEmail");
-const userInput = document.querySelector("#inputUser");
 const passwordInput = document.querySelector("#inputPassword");
 const confirmPasswordInput = document.querySelector("#inputConfirmPassword");
 // const termosUsoCheckbox = document.querySelector("#termosUso");
@@ -37,7 +36,6 @@ function setMinLengthPatternAndTitle(inputElement, minLength) {
 }
 setMinLengthPatternAndTitle(nameInput, 3);
 setMinLengthPatternAndTitle(surnameInput, 3);
-setMinLengthPatternAndTitle(userInput, 5);
 
 const $inputs = jQuery(form).find("input");
 let feedbackArray = [];
@@ -181,7 +179,6 @@ form.addEventListener("submit", function (event) {
         inputSurname: surnameInput.value,
         inputBornDate: bornDateInput.value,
         inputEmail: emailInput.value,
-        inputUser: userInput.value,
         inputPassword: passwordInput.value,
         inputConfirmPassword: confirmPasswordInput.value,
       },
@@ -201,7 +198,12 @@ form.addEventListener("submit", function (event) {
         }
       },
       error: function (e) {
-        let errorMessage = "Erro ao enviar o formulário"
+        let errorMessage;
+        for (let key in response) {
+          if (key !== "success") {
+            errorMessage += response[key] + "<br/>";
+          }
+        }
         $(validationDiv).html(errorMessage).removeClass("text-success").addClass("text-danger");
       },
     });

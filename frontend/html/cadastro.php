@@ -61,13 +61,6 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-12" id="user-group">
-                                    <label for="inputUser">Nome de Usuário</label>
-                                    <input type="text" class="form-control" name="inputUser" id="inputUser"
-                                        placeholder="Digite seu Usuário" required>
-                                </div>
-                            </div>
-                            <div class="form-row">
                                 <div class="form-group col-md-12" id="password-group">
                                     <label for="inputPassword">Senha</label>
                                     <div class="input-group">
@@ -99,14 +92,14 @@
                                 </div>
                             </div>
 
-                            <div class="form-check mb-3">
+                            <button id="btCadastrar" type="submit" class="btn btn-primary col-md-12">Cadastrar</button>
+                            <div class="form-check mt-1">
                                 <div id="passwordMatchMessage" class="mt-1"></div>
                                 <div id="validationMessage"></div>
                             </div>
-                            <button id="btCadastrar" type="submit" class="btn btn-primary col-md-12">Cadastrar</button>
                         </form>
 
-                        <div class="text-center mt-3">
+                        <div class="text-center mt-1">
                             Já possui cadastro? <a href="login">Faça login aqui</a>
                         </div>
                     </div>
