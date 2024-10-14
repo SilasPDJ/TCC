@@ -13,9 +13,14 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
 </head>
 
 <body>
+    <?php include 'utils/navbar.php'; ?>
 
     <div class="container mt-5">
         <div class="row justify-content-center pagina">
@@ -107,6 +112,8 @@
             </div>
         </div>
     </div>
+    <?php require_once('utils/footer.php') ?>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js">
     </script>

@@ -32,7 +32,7 @@
         <!-- Botão futurístico -->
         <div class="text-center mt-4">
             <button id="sendDataBtn" class="btn btn-dark btn-lg rounded-pill shadow-lg">
-                Começar Treinamento de Gestos
+                Começar Reconhecimento de Gestos
             </button>
         </div>
 

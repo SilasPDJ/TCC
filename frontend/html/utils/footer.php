@@ -3,17 +3,23 @@
         <div class="container">
             <div class="row itens">
                 <div class="col-md-4">
-                    <h4>ASL Libras</h4>
+                    <h4>Libras e ASL</h4>
                     <ul class="list-unstyled">
-                        <li><a class="footerA" href="#">Sobre nós</a></li>
-                        <li><a class="footerA" href="#">Contato</a></li>
-                        <li><a class="footerA" href="#">Termos de uso</a></li>
+                        <li><a class="footerA" href="/#sobre">Sobre nós</a></li>
+                        <li><a class="footerA" href="/#navbarDropdown">Mais</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h4>Contatos</h4>
-                    <p>Telefone: (11) 1234-5678</p>
-                    <p>E-mail: contato@asl.com</p>
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <span>Telefone: (11) 1234-5678</span>
+                        </li>
+                        <li>
+                            <span>E-mail: contato@asl.com</span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="col-md-4">
                     <h4>Siga-nos</h4>

@@ -38,7 +38,7 @@
                     <div class="carousel-item active rounded">
                         <img src="img/foto2.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-md-block">
-                            <h3 class="h3-carrossel">Meto Libras</h3>
+                            <h3 class="h3-carrossel">Libras e ASL</h3>
                             <p class="p-carrossel">O caminho para uma boa comunicação.</p>
                             <a href="#sobre">
                                 <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
