@@ -41,6 +41,9 @@ $isUserLogged = isset($_SESSION['logged_user']);
                 </div>
                 <hr class="linhabar d-lg-none w-100 my-2">
             </div>
+
+
+
             <div class="navbar-nav">
                 <?php if ($isUserLogged): ?>
                     <div class="nav-item dropdown ml-4">
@@ -55,6 +58,9 @@ $isUserLogged = isset($_SESSION['logged_user']);
                     </div>
                     <a href="/php/sair" class="btn btn-outline-danger my-2 my-sm-0">Sair</a>
                 <?php else: ?>
+                    <div class="mr-4 mt-1 text-center mb-sm-2">
+                        <p class="mb-0 badge bg-primary text-white">Para aceessar o módulo de reconhecimento de gestos, é necessário entrar no sistema.</p>
+                    </div>
                     <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Entrar</a>
                     <a href="/html/cadastro" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
                 <?php endif; ?>

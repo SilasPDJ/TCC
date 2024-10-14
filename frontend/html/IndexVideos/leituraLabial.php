@@ -226,7 +226,7 @@
     </main>
 
     <!-- Rodapé da página -->
-    <?php require_once('utils/footer.php') ?>
+    <?php require_once('../utils/footer.php') ?>
 
 </body>
 
