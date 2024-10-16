@@ -92,9 +92,9 @@
             </div>
         </div>
     </div>
-
     <!-- Rodapé da página -->
     <?php require_once('utils/footer.php') ?>
+
 
 </body>
 
