@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row itens">
                 <div class="col-md-4">
-                    <h4>Libras e ASL</h4>
+                    <h4>LibrasConnect</h4>
                     <ul class="list-unstyled">
                         <li><a class="footerA" href="/#sobre">Sobre nós</a></li>
                         <li><a class="footerA" href="/#navbarDropdown">Mais</a></li>
