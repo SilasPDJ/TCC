@@ -59,8 +59,15 @@ $isUserLogged = isset($_SESSION['logged_user']);
                     <a href="/php/sair" class="btn btn-outline-danger my-2 my-sm-0">Sair</a>
                 <?php else: ?>
                     <div class="mr-4 mt-1 text-center mb-sm-2">
-                        <p class="mb-0 badge bg-primary text-white">Para acesso ao módulo de reconhecimento de gestos, faça login no sistema.</p>
+                        <?php if ($currentPage != 'cadastro.php'): ?>
+                            <p class="mb-0 badge bg-primary text-white">Para acesso ao módulo de reconhecimento de gestos, faça login no sistema.</p>
+                        <?php else: ?>
+                            <p class="mb-0 badge bg-primary text-white">Para acesso ao módulo de reconhecimento de gestos, cadastre-se no sistema.</p>
+
+                        <?php endif; ?>
                     </div>
+
+
                     <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Login</a>
                     <a href="/html/cadastro" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
                 <?php endif; ?>
