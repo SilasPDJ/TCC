@@ -34,9 +34,10 @@ if (empty($response)) {
     // Busque a senha atual do usuário no banco de dados
     $senhaAtual = buscarSenhaAtual($conexao, $userId);
 
-    if ($senhaAtual && password_verify($inputOldPassword, $senhaAtual) == $inputPassword) {
+    if ($senhaAtual && password_verify($inputOldPassword, $senhaAtual) && $senhaAtual == $inputPassword) {
+        $test = password_verify($inputOldPassword, $senhaAtual);
         $response['success'] = false;
-        $response['message'] = "A nova senha deve ser diferente da atual";
+        $response['message'] = "$inputOldPassword e $senhaAtual e $inputPassword e $test";
     } else if ($senhaAtual && password_verify($inputOldPassword, $senhaAtual)) {
         // Se a senha antiga estiver correta, atualize a senha
         if (atualizarSenhaUsuario($conexao, $userId, $inputPassword)) {
