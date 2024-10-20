@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../../css/videos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="../../Js/videos.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -53,17 +52,14 @@
                                 <a onclick="toggleDescricao('visao-geral')">Visão Geral</a>
                             </li>
                             <li>
-                                <a onclick="toggleDescricao('perguntas')">Perguntas</a>
+                                <a onclick="toggleDescricao('descricao')">Descrição</a>
                             </li>
                             <li>
                                 <a onclick="toggleDescricao('avaliacoes')">Avaliações</a>
                             </li>
-                            <li>
-                                <a onclick="toggleDescricao('descricao')">Descrição</a>
-                            </li>
                         </ul>
                     </div>
-
+                    
                     <div id="descricao-container" class="descricao-container">
 
                         <!-- VISÃO GERAL -->
@@ -107,68 +103,7 @@
                             </p>
                         </div>
 
-                        <!-- PERGUNTAS -->
-                        <div id="descricao-perguntas" class="descricao-ocultavel" style="display: none;">
-                            <p>
-                            <div class="container mt-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Faça uma pergunta:</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="pergunta1">Pergunta :</label>
-                                                <input type="text" class="form-control" id="pergunta1">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Enviar</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            </p>
-                        </div>
-
-                        <!-- AVALIAÇÃO -->
-                        <div id="descricao-avaliacoes" class="descricao-ocultavel" style="display: none;">
-                            <p>
-                            <div class="container mt-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Avalie o Conteúdo:</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="nome">Nome:</label>
-                                                <input type="text" class="form-control" id="nome" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="comentario">Comentário:</label>
-                                                <textarea class="form-control" id="comentario" rows="5"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="avaliacao"><strong>Avaliação:</strong></label>
-                                                <div class="rating">
-                                                    <input type="radio" id="estrela1" name="avaliacao" value="1">
-                                                    <label for="estrela1"></label>
-                                                    <input type="radio" id="estrela2" name="avaliacao" value="2">
-                                                    <label for="estrela2"></label>
-                                                    <input type="radio" id="estrela3" name="avaliacao" value="3">
-                                                    <label for="estrela3"></label>
-                                                    <input type="radio" id="estrela4" name="avaliacao" value="4">
-                                                    <label for="estrela4"></label>
-                                                    <input type="radio" id="estrela5" name="avaliacao" value="5">
-                                                    <label for="estrela5"></label>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            </p>
-                        </div>
+                        <?php include('utils/avaliacao.php'); ?>
 
                         <!-- DESCRIÇÃO -->
                         <div id="descricao-descricao" class="descricao-ocultavel" style="display: none;">
@@ -227,7 +162,12 @@
 
     <!-- Rodapé da página -->
     <?php require_once('../utils/footer.php') ?>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="../../Js/videos.js"></script>
 </body>
 
 </html>

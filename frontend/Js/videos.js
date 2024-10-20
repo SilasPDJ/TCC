@@ -1,5 +1,5 @@
 function toggleDescricao(descricaoId) {
-  const opcoes = ['visao-geral', 'perguntas', 'avaliacoes', 'descricao'];
+  const opcoes = ['visao-geral', 'avaliacoes', 'descricao'];
 
   opcoes.forEach(id => {
     const descricaoElement = document.getElementById('descricao-' + id);
@@ -13,3 +13,4 @@ function toggleDescricao(descricaoId) {
     }
   });
 }
+
