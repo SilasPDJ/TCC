@@ -11,15 +11,15 @@
         <label for="avaliacao">Avaliação:</label>
         <div class="rating">
             <input type="radio" id="estrela1" name="avaliacao" value="1">
-            <label for="estrela1">1 Estrela</label>
+            <label for="estrela1"></label>
             <input type="radio" id="estrela2" name="avaliacao" value="2">
-            <label for="estrela2">2 Estrelas</label>
+            <label for="estrela2"></label>
             <input type="radio" id="estrela3" name="avaliacao" value="3">
-            <label for="estrela3">3 Estrelas</label>
+            <label for="estrela3"></label>
             <input type="radio" id="estrela4" name="avaliacao" value="4">
-            <label for="estrela4">4 Estrelas</label>
+            <label for="estrela4"></label>
             <input type="radio" id="estrela5" name="avaliacao" value="5">
-            <label for="estrela5">5 Estrelas</label>
+            <label for="estrela5"></label>
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
