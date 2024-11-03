@@ -41,28 +41,6 @@ img.rounded.float-end.libras {
     margin-right: 100px;
 }
 
-.seta {
-    display: flex;
-    justify-content: center;
-}
-
-.seta2 {
-    display: flex;
-    justify-content: center;
-}
-
-a.seta-click {
-    background-color: rgba(0, 0, 0, 0);
-    /* cor de fundo */
-    color: #0f0f0fd6;
-    /* cor do texto */
-}
-
-a.seta-click:hover {
-    background-color: rgba(220, 220, 226, 0);
-    color: #888787;
-}
-
 i.fa-solid.fa-arrow-down {
     font-size: 40px;
 }
@@ -124,13 +102,7 @@ i.fa-solid.fa-arrow-down {
     transform: translateY(0);
 }
 
-.videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    height: 0;
-    overflow: hidden;
-}
+.videoWrapper {}
 
 
 

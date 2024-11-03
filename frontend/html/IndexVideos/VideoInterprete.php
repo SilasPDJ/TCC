@@ -9,12 +9,27 @@
 
 <body>
     <!-- NAVBAR -->
-    <?php include('../utils/navbar.php') ?>
+    <?php include('../utils/navbar.php');
+    ?>
 
     <!-- CONTEÚDO -->
     <main>
-        <div class="tituloVideo">
+        <div class="">
             <h2>Intérprete de Libras</h2>
+        </div>
+
+        <div>
+            <?php
+            ob_start();
+            ?>
+            <?php
+            // Captura o conteúdo do buffer
+            $htmlContent = ob_get_clean();
+
+            // Passa o conteúdo para a função de inclusão
+            includeWithVariables('modal/modal.php', array('title' => 'Visão Geral', 'content' => $htmlContent, 'textButton' => 'Mostrar Visão Geral'));
+            ?>
+
         </div>
 
         <div class="container my-5">
@@ -26,8 +41,6 @@
                     <div class="mb-4">
                         <h3 class="mb-1">Visão Geral</h3>
                         <p class="">
-                            O curso de intérprete de Libras (Língua Brasileira de Sinais) é uma formação essencial para aqueles que desejam atuar como mediadores de comunicação entre pessoas surdas e ouvintes. A Libras é reconhecida como uma língua oficial no Brasil, e a demanda por intérpretes qualificados tem crescido significativamente. Este curso abrangente oferece aos participantes os conhecimentos teóricos e práticos necessários para se tornarem intérpretes profissionais e promoverem a inclusão de pessoas surdas na sociedade.<br><br>
-
                             <strong>Objetivos do curso:</strong><br>
                             O curso de intérprete de Libras tem como principal objetivo capacitar os alunos a compreenderem e se comunicarem efetivamente por meio da língua de sinais, a fim de facilitar a interação entre surdos e ouvintes. Os objetivos específicos incluem:<br><br>
 
@@ -42,8 +55,9 @@
                     </div>
 
                     <!-- Vídeo Incorporado -->
-                    <div class="embed-responsive">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4F5QfBq2vX0"
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.youtube.com/embed/4F5QfBq2vX0"
                             title="CURSO DE LIBRAS aula #01 Com apostila e Certificado!" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>

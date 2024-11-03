@@ -25,57 +25,54 @@
         </div>
     </div>
 
-
     <!-- CARDS DOS CURSOS -->
     <div class="container cursos">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
+        <div class="row justify-content-center">
+            <div class="col-md-4 d-flex">
+                <div class="card w-100 h-100">
                     <img class="card-img-top" src="../img/interprete.jpg" alt="Imagem 1">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Intérprete de Libras</h5>
-                        <p class="card-text">Saiba fazer interpretação de libras.</p>
-                        <p class="card-text"> Certificado
-                            <span class="material-symbols-outlined">workspace_premium</span>
+                        <p class="card-text">
+                            O curso de intérprete de Libras é essencial para aqueles que desejam mediar uma comunicação entre pessoas surdas e ouvintes através de
+                            conhecimentos teóricos e práticos.
                         </p>
-                        <p class="card-text">Duração: 12 Horas</p>
-                        <a href="../html/IndexVideos/VideoInterprete" class="btn btn-primary">Ver
-                            mais</a>
+                        <a href="../html/IndexVideos/VideoInterprete" class="btn btn-primary mt-auto">Ver mais</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="../img/aslAmerica.png" alt="Imagem 2">
-                    <div class="card-body">
-                        <h5 class="card-title">ASL - Americano</h5>
-                        <p class="card-text">Curso completo de libras Americana (ASL).</p>
-                        <p class="card-text"> Certificado
-                            <span class="material-symbols-outlined">workspace_premium</span>
-                        </p>
-                        <p class="card-text">Duração: 22 Horas</p>
-                        <a href="../html/IndexVideos/ASLAmericano" class="btn btn-primary">Ver
-                            mais</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 d-flex">
+                <div class="card w-100 h-100">
                     <img class="card-img-top" src="../img/labial.png" alt="Imagem 3">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Introdução à leitura labial</h5>
-                        <p class="card-text">Começe a aprender os conceitos da leitura labial.</p>
-                        <p class="card-text"> Certificado
-                            <span class="material-symbols-outlined">workspace_premium</span>
+                        <p class="card-text">
+                            O curso de Introdução à Leitura Labial ensina técnicas essenciais para se comunicar com pessoas surdas ou com dificuldades auditivas,
+                            focando na interpretação de movimentos labiais e expressões faciais.
                         </p>
-                        <p class="card-text">Duração: 8 Horas</p>
-                        <a href="../html/IndexVideos/leituraLabial" class="btn btn-primary">Ver
-                            mais</a>
+
+                        <a href="../html/IndexVideos/leituraLabial" class="btn btn-primary mt-auto">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card w-100 h-100">
+                    <img class="card-img-top" src="../img/aslAmerica.png" alt="Imagem 2">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">ASL - Americano</h5>
+                        <p class="card-text">
+                            O curso de ASL, ou American Sign Language (Língua de Sinais Americana), oferece uma introdução completa à língua de sinais
+                            utilizada pela comunidade surda nos Estados Unidos.
+                        </p>
+
+                        <a href="../html/IndexVideos/ASLAmericano" class="btn btn-primary mt-auto">Ver mais</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
     <!-- Rodapé da página -->
     <?php require_once('utils/footer.php') ?>
 

@@ -16,11 +16,6 @@ main {
     flex-direction: column;
 }
 
-.tituloVideo {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
 
 .rating {
     direction: rtl;

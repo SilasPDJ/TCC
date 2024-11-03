@@ -245,8 +245,6 @@ function getNewIframe(id, url, divSelector) {
   // iframe.setAttribute("width", "100%");
   // iframe.setAttribute("height", "100%");
   // iframe.style.position = 'relative';
-  iframe.style.top = '0';
-  iframe.style.left = '0';
   iframe.style.width = '100%';
   iframe.style.height = '50vh';
 

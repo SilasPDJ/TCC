@@ -12,35 +12,30 @@
 
     <!-- CONTEÚDO -->
     <main>
-        <div class="tituloVideo">
+        <div class="tex-center">
             <h3>Introdução à leitura labial</h3>
         </div>
 
         <div class="container-fluid">
             <div class="conteudo row">
                 <div class="col-sm-8">
-                    <div class="embed-responsive embed-responsive-16by9">
+                    <div class="ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/PDrMpCQYdy4"
                             title="Leitura Labial faz parte da Língua Brasileira de Sinais | Conhecendo Libras"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                            allowfullscreen class="embed-responsive-item"></iframe>
                     </div>
 
                     <div class="text-center">
                         <h2>Visão Geral</h2>
                     </div>
 
-                    <div id="descricao-container" class="descricao-container">
+                    <div>
 
                         <!-- VISÃO GERAL -->
                         <div id="descricao-visao-geral" class="descricao-ocultavel">
                             <p class="descricaoText">
-                                O curso de leitura labial é uma valiosa oportunidade para pessoas surdas aprimorarem
-                                suas habilidades de compreensão da fala por meio da leitura dos movimentos dos lábios e
-                                expressões faciais. Desenvolvido especificamente para atender às necessidades e desafios
-                                enfrentados pela comunidade surda, este curso oferece uma visão abrangente e prática da
-                                leitura labial como uma ferramenta adicional de comunicação.<br><br>
 
                                 <strong>Objetivos do curso:</strong><br>
                                 A leitura labial é uma habilidade que permite às pessoas surdas obterem informações
