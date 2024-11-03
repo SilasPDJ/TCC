@@ -3,7 +3,7 @@
     <div class="container text-white mx-auto">
         <div class="row itens">
             <div class="col-md-4">
-                <h4 class="text-uppercase">LibrasConnect</h4>
+                <h4 class="text-title">LibrasConnect</h4>
                 <ul class="list-unstyled">
                     <li>Everton de Sousa Monteiro</li>
                     <li>Filipe Norberto Justino</li>

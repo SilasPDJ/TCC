@@ -23,9 +23,8 @@
 
                         <div class="card-body">
 
-                            <h4 class="card-title text-center">Entrar</h4>
+                            <h4 class="card-title text-center">Login</h4>
                             <form id="login-form">
-                                <div id="validationMessage" class="alert"></div>
                                 <div class="form-group mb-3">
                                     <label for="username">E-mail:</label>
                                     <input type="email" class="form-control" id="username" name="username"
@@ -46,11 +45,13 @@
                                     <input type="checkbox" class="form-check-input" id="remember" name="remember">
                                     <label class="form-check-label" for="remember">Lembrar-me</label>
                                 </div>
+                                <div id="validationMessage"></div>
+
                                 <div class="d-grid gap-2">
 
                                     <button type="submit" class="btn btn-primary btn-block">Entrar</button>
                                     <button type="button" class="btn btn-outline-secondary btn-block"
-                                        onclick="window.location.href='/html/cadastro'">Cadastrar</button>
+                                        onclick="window.location.href='/html/cadastro'">Não possui cadastro?</button>
                                 </div>
                             </form>
                         </div>

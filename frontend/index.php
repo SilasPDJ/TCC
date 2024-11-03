@@ -62,7 +62,8 @@
 
                 <div class="proposito mt-4">
                     <p class="lead">
-                        Para isso, criamos uma <b>ferramenta</b> que realiza reconhecimento e tradução de <b>Libras</b> <i>(Língua Brasileira de Sinais)</i>.
+                        Visando isso, desenvolvemos uma <b>ferramenta</b> de reconhecimento e tradução de <b>Libras</b> <i>(Língua Brasileira de Sinais)</i>. Para acessá-la, é necessário efetuar <a href="/html/login" class="link-dark">login</a>.
+
                     </p>
                 </div>
             </div>

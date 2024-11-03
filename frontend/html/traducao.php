@@ -50,25 +50,6 @@
         <div class="videos">
         </div>
 
-        <div class="container information">
-            <div class="Conteudos row mb-4 pb-4">
-                <div class="primeiroConteudo col-md-6">
-                    <h2>Por que aprender a traduzir de Libras para ASL?</h2>
-                    <p class="resposta">A Língua Brasileira de Sinais (Libras) é uma língua de sinais utilizada
-                        no Brasil. A Língua Americana de Sinais (ASL) é uma língua de sinais utilizada nos
-                        Estados Unidos. Aprender a traduzir de Libras para ASL pode ser útil para pessoas que
-                        se comunicam em Libras e querem se comunicar com pessoas que utilizam a ASL.</p>
-                </div>
-                <div class="segundoConteudo col-md-6">
-                    <h2>Como funciona a tradução de Libras para ASL?</h2>
-                    <p class="resposta">A tradução de Libras para ASL envolve a interpretação dos gestos e expressões
-                        faciais da pessoa
-                        que está utilizando a Libras e a tradução desses gestos para a língua de sinais americana (ASL).
-                        É importante notar que essas duas línguas de sinais são distintas e possuem diferenças em termos
-                        de vocabulário, gramática e estrutura.
-                </div>
-            </div>
-        </div>
     </main>
 
     <!-- Rodapé da página -->
