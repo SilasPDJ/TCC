@@ -2,27 +2,8 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ASL - Tradução de Libras</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/nav.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="../../Js/videos.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <?php include_once('utils/head.php') ?>
 
 </head>
 
@@ -58,11 +39,6 @@
     </main>
     <!-- Rodapé da página -->
     <?php require_once('utils/footer.php') ?>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-    </script>
 
     <!-- JavaScript para enviar dados ao Flask -->
     <script>

@@ -6,27 +6,26 @@ body {
     flex-direction: column;
     margin: 0;
     overflow-x: hidden;
+    padding-top: 20px;
 }
 
-.Title-1 {
-    display: flex;
-    justify-content: center;
-    margin-top: 200px;
+
+header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
 }
 
-.Title-2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 220px;
+main {
+    padding: 20px;
+    background-color: #ffffff;
 }
 
-.img1 {
-    margin-top: 90px;
-    margin-bottom: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+#footer {
+    background-color: rgba(219, 219, 219, 0.795);
+    text-align: center;
 }
 
 img.rounded.float-end {
@@ -50,13 +49,11 @@ img.rounded.float-end.libras {
 .seta {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
 }
 
 .seta2 {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
 }
 
 a.seta-click {
@@ -68,20 +65,14 @@ a.seta-click {
 
 a.seta-click:hover {
     background-color: rgba(220, 220, 226, 0);
-    /* cor de fundo quando o cursor está sobre o botão */
     color: #888787;
-    /* cor do texto quando o cursor está sobre o botão */
 }
 
 i.fa-solid.fa-arrow-down {
     font-size: 40px;
 }
 
-footer.footer {
-    margin-top: auto;
-    background-color: rgba(219, 219, 219, 0.795);
 
-}
 
 .btnFooter {
     border-radius: 5px;
@@ -138,25 +129,21 @@ a.footerA:active {
     margin-bottom: 150px;
 }
 
-@media only screen and (max-width: 760px) {
 
-    .img1 {
-        display: flex;
-        justify-content: center;
-    }
+@media only screen and (max-width: 760px) {
 
     img.rounded.float-end {
         max-width: 400px;
         height: 200px;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     img.rounded.float-end.ilove {
         max-width: 400px;
         height: 200px;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     div.col.dois {
@@ -168,28 +155,14 @@ a.footerA:active {
         margin-right: 15px;
     }
 
-    .Title-1 {
-        display: flex;
-        justify-content: center;
-        margin-top: 90px;
-    }
-
-    .Title-2 {
-        display: flex;
-        justify-content: center;
-        margin-top: 140px;
-    }
-
     .seta {
         display: flex;
         justify-content: center;
-        margin-top: 120px;
     }
 
     .seta2 {
         display: flex;
         justify-content: center;
-        margin-top: 40px;
     }
 
     .itensGeral {

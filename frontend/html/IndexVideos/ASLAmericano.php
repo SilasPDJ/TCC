@@ -2,25 +2,8 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php include_once('../utils/head.php') ?>
     <title>Curso</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
-    <link rel="stylesheet" type="text/css" href="../../css/videos.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 </head>
 
@@ -45,24 +28,14 @@
                             allowfullscreen></iframe>
                     </div>
 
-                    <div class="video-bar">
-                        <ul>
-                            <li>
-                                <a onclick="toggleDescricao('visao-geral')">Visão Geral</a>
-                            </li>
-                            <li>
-                                <a onclick="toggleDescricao('descricao')">Descrição</a>
-                            </li>
-                            <li>
-                                <a onclick="toggleDescricao('avaliacoes')">Avaliações</a>
-                            </li>
-                        </ul>
+                    <div class="text-center mt-2">
+                        <h2>Visão Geral</h2>
                     </div>
 
                     <div id="descricao-container" class="descricao-container">
 
                         <!-- VISÃO GERAL -->
-                        <div id="descricao-visao-geral" class="descricao-ocultavel" style="display: none;">
+                        <div id="descricao-visao-geral" class="descricao-ocultavel">
                             <p class="descricaoText">
                                 O curso de ASL Americano, também conhecido como American Sign Language (Língua de Sinais
                                 Americana), é uma oportunidade empolgante de aprender a língua de sinais usada pela
@@ -100,8 +73,6 @@
                                 Isso promoverá a sensibilidade cultural e a inclusão social.<br><br>
                             </p>
                         </div>
-
-                        <?php include('utils/avaliacao.php'); ?>
 
                         <!-- DESCRIÇÃO -->
                         <div id="descricao-descricao" class="descricao-ocultavel" style="display: none;">
@@ -155,12 +126,7 @@
 
     <!-- Rodapé da página -->
     <?php require_once('../utils/footer.php') ?>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="../../Js/videos.js"></script>
+
 
 </body>
 
