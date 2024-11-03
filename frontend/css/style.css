@@ -12,7 +12,9 @@ body {
 
 main {
     padding: 20px;
+    margin-top: 2vw;
     background-color: #f8f9fa;
+    margin-bottom: 3vw;
 }
 
 
@@ -121,6 +123,15 @@ i.fa-solid.fa-arrow-down {
     visibility: visible;
     transform: translateY(0);
 }
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
 
 
 @media only screen and (max-width: 760px) {
