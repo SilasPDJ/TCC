@@ -10,22 +10,15 @@ body {
 }
 
 
-header {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1000;
-}
-
 main {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f8f9fa;
 }
 
-#footer {
+
+header navbar {
     background-color: rgba(219, 219, 219, 0.795);
-    text-align: center;
+
 }
 
 img.rounded.float-end {
@@ -103,30 +96,30 @@ i.fa-solid.fa-arrow-down {
     font-size: 1.2rem;
 }
 
-.footerA {
-    text-decoration: none;
-}
-
-/* link que foi visitado */
-a.footerA:visited {
-    color: rgb(0, 0, 0);
-}
-
-/* mouse over */
-a.footerA:hover {
-    color: #3f3f3f;
-}
-
-/* link selecionado */
-a.footerA:active {
-    color: rgb(167, 167, 167);
-}
 
 .itensGeral {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 150px;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.hidden {
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.visible {
+    visibility: visible;
+    transform: translateY(0);
 }
 
 

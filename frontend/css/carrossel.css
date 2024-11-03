@@ -1,11 +1,12 @@
+.meu-carrossel {
+    max-width: 70%;
+    border-radius: 20px;
+}
+
 .carousel-item img {
     border-radius: 3%;
 }
 
-.meu-carrossel {
-    max-width: 90%;
-    border-radius: 20px;
-}
 
 button.btn.btn-outline-secondary.slide {
     margin-bottom: 10px;

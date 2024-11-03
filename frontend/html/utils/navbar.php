@@ -11,7 +11,7 @@ $isUserLogged = isset($_SESSION['logged_user']);
 <!-- TOPO -->
 <header class="">
     <!-- NAVBAR RESPONSIVA -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light m-0">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-body m-0">
         <div class="container-fluid m-1">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,10 +21,7 @@ $isUserLogged = isset($_SESSION['logged_user']);
                     LibrasConnect <i class="fa-solid fa-language"></i>
                 </a>
             </div>
-            <div class="mt-2 d-flex ms-auto">
-                <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Login</a>
-                <a href="/html/cadastro" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
-            </div>
+
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <div class="navbar-nav mx-auto">
                     <?php if ($isUserLogged): ?>
@@ -50,7 +47,10 @@ $isUserLogged = isset($_SESSION['logged_user']);
                     <?php endif; ?>
                 </div>
             </div>
-
+            <div class="mt-2 d-flex ms-auto gap-2">
+                <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Login</a>
+                <a href="/html/cadastro" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
+            </div>
         </div>
     </nav>
 </header>
