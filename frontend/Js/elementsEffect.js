@@ -35,3 +35,6 @@ function elementsEffect(...args) {
     });
   });
 }
+$(document).ready(function () {
+  $('.js-example-basic-single').select2();
+});

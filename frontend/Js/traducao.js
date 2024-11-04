@@ -30,7 +30,7 @@ let librasObj = {
   'Liberal': 'ejMiNsl_cyg',
   'Mae': '9WlzSyJpV1s',
   'Mentir/Mentira': 'kdexRpyy0JE',
-  'Metro': 'lD3UyTpmses',
+  'Metrô': 'lD3UyTpmses',
   'Morto/Morte': 'cEF26lYkU4Y',
   'Motocicleta': 'VJh7aObu3K0',
   'Mudo': 'Zb2iy69gwAo?t=11',
@@ -55,21 +55,21 @@ let librasObj = {
   'Videogame': '0aY44ZrzY-Q?t=5',
   'Voltar': 'dC9nV-5au2s',
   // ours
-  'Agua': '1rH5ZJ1Gn0I',
-  'Ajuda': 'Ttc85c4Rsh0',
-  'Banheiro': 'GUZsyxHN0QI',
-  'Bem Vindo': 'OV60WiBEbU4',
-  'Boa Noite': '3ACHjO5Mg04',
-  'Boa Tarde': 'M6aP0MjlGqw',
-  'Bom Dia': 'psiINakJn80',
-  'Comer': '8PTxQce6kbw',
-  'Meu Nome': '-y2Zn4tNxtc',
-  'Obrigado': 'LEjGpE-Pqe4',
-  'Oi': 'QV41eeN2yek',
-  'Ouvir': '0wP4QSGQuGQ',
-  'Paz': 'pCdBPClywow',
-  'Surdo': 'nNA9SaJ-OQo',
-  'Tchau': '',
+  // 'Agua': '1rH5ZJ1Gn0I',
+  // 'Ajuda': 'Ttc85c4Rsh0',
+  // 'Banheiro': 'GUZsyxHN0QI',
+  // 'Bem Vindo': 'OV60WiBEbU4',
+  // 'Boa Noite': '3ACHjO5Mg04',
+  // 'Boa Tarde': 'M6aP0MjlGqw',
+  // 'Bom Dia': 'psiINakJn80',
+  // 'Comer': '8PTxQce6kbw',
+  // 'Meu Nome': '-y2Zn4tNxtc',
+  // 'Obrigado': 'LEjGpE-Pqe4',
+  // 'Oi': 'QV41eeN2yek',
+  // 'Ouvir': '0wP4QSGQuGQ',
+  // 'Paz': 'pCdBPClywow',
+  // 'Surdo': 'nNA9SaJ-OQo',
+  // 'Tchau': '',
 
 };
 
@@ -292,17 +292,42 @@ const fakeEvent = {
 
 elSelectPortuguese.selectedIndex = 0;
 
-elSelectPortuguese.addEventListener("change", selectTextToTranslate);
-elSelectPortuguese.addEventListener("change", function (event) {
-  elSelectEnglish.value = event.target.value;
+// elSelectPortuguese.addEventListener("change", selectTextToTranslate);
+
+// elSelectPortuguese.addEventListener("change", function (event) {
+//   elSelectEnglish.value = event.target.value;
+// });
+
+let isUpdating = false;
+
+$(elSelectPortuguese).on("change", function (event) {
+  if (!isUpdating) {
+    isUpdating = true;
+    $(elSelectEnglish).val($(this).val());
+    $(elSelectEnglish).trigger('change');
+    selectTextToTranslate(event)
+    isUpdating = false;
+  }
 });
+
+$(elSelectEnglish).on("change", function (event) {
+  if (!isUpdating) {
+    isUpdating = true;
+    $(elSelectPortuguese).val($(this).val());
+    $(elSelectPortuguese).trigger('change');
+    selectTextToTranslate(event)
+    isUpdating = false;
+
+  }
+});
+
 
 elSelectEnglish.selectedIndex = 0;
-elSelectEnglish.addEventListener("change", function (event) {
-  elSelectPortuguese.value = event.target.value;
+// elSelectEnglish.addEventListener("change", function (event) {
+//   elSelectPortuguese.value = event.target.value;
 
-  selectTextToTranslate(fakeEvent);
-});
+//   selectTextToTranslate(fakeEvent);
+// });
 
 selectTextToTranslate(fakeEvent);
 // }

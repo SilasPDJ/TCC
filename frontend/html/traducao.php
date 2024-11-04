@@ -31,7 +31,7 @@
                             Selecione uma frase em português (↑↓)
                         </a>
                     </div>
-                    <select name="" id="textTranslated-portuguese" class="form-select form-select">
+                    <select name="textTranslated-portuguese" id="textTranslated-portuguese" class="form-select js-example-basic-single">
                         <!-- Criadas dinamicamente -->
                     </select>
                 </div>
@@ -44,9 +44,10 @@
                             Select an english phrase option below (↑↓)
                         </a>
                     </div>
-                    <select name="" id="textTranslated-english" class="form-select">
+                    <select name="textTranslated-english" id="textTranslated-english" class="form-select js-example-basic-single">
                         <!-- Criadas dinamicamente -->
                     </select>
+
                 </div>
             </div>
 
@@ -69,6 +70,7 @@
     <?php require_once('utils/footer.php') ?>
 
     <script src="../Js/traducao.js"></script>
+
 </body>
 
 </html>

@@ -68,3 +68,11 @@
 
 <!-- Scripts -->
 <script src="js/elementsEffect.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2({
+            theme: "classic",
+        });
+    });
+</script>
