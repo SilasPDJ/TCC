@@ -12,7 +12,7 @@
 
     <!-- CONTEÚDO -->
     <main class="container-fluid">
-        <div class="text-center mt-4">
+        <div class="text-center">
             <h3>ASL Americano</h3>
         </div>
         <div>
@@ -67,7 +67,7 @@
         </div>
 
         <div class="row mt-4">
-            <div class="col-sm-8 mx-auto">
+            <div class="col-md-9 col-sm-9 col-xs-12 mx-auto">
                 <div class="ratio ratio-16x9">
                     <iframe src="https://www.youtube.com/embed/jCUaMdXsI7w?list=PL2rZQvyPycXJPaPuFSvtlyQxmb6GfNUP_"
                         title="LEARN ASL FAST with high frequency words | 24 common signs for everyday conversation"

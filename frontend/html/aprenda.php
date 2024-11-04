@@ -37,7 +37,7 @@
                             O curso de intérprete de Libras é essencial para aqueles que desejam mediar uma comunicação entre pessoas surdas e ouvintes através de
                             conhecimentos teóricos e práticos.
                         </p>
-                        <a href="../html/IndexVideos/VideoInterprete" class="btn btn-primary mt-auto">Ver mais</a>
+                        <a href="../html/aprenda/VideoInterprete" class="btn btn-primary mt-auto">Clique para conhecer</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                             focando na interpretação de movimentos labiais e expressões faciais.
                         </p>
 
-                        <a href="../html/IndexVideos/leituraLabial" class="btn btn-primary mt-auto">Ver mais</a>
+                        <a href="../html/aprenda/leituraLabial" class="btn btn-primary mt-auto">Clique para conhecer</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                             utilizada pela comunidade surda nos Estados Unidos.
                         </p>
 
-                        <a href="../html/IndexVideos/ASLAmericano" class="btn btn-primary mt-auto">Ver mais</a>
+                        <a href="../html/aprenda/ASLAmericano" class="btn btn-primary mt-auto">Clique para conhecer</a>
                     </div>
                 </div>
             </div>
