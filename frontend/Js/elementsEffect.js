@@ -7,7 +7,7 @@ function elementsEffect(...args) {
         // Definindo os estilos diretamente no JavaScript
         element.style.transition = 'transform 1s ease-in-out';
         element.style.visibility = 'hidden';
-        element.style.transform = 'translateX(-200px)';
+        element.style.transform = 'translateX(-300px)';
 
         const showElement = () => {
           element.style.visibility = 'visible';
@@ -16,7 +16,7 @@ function elementsEffect(...args) {
 
         const hideElement = () => {
           element.style.visibility = 'hidden';
-          element.style.transform = 'translateX(-200px)';
+          element.style.transform = 'translateX(-300px)';
         };
 
         const observer = new IntersectionObserver(entries => {

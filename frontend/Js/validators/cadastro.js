@@ -108,7 +108,7 @@ function ValidatePasswords(inputSenha, inputConfirmarSenha, matchDiv) {
     $(matchDiv).removeClass("text-success").addClass("text-danger");
 
     if (senha !== confirmarSenha && confirmarSenha) {
-      feedbackArray.push("A confirmação da senha não corresponde.");
+      feedbackArray.push("As senhas não coincidem.");
     }
     if (senha.length < minLength) {
       feedbackArray.push("Senha deve conter no mínimo 8 caracteres.");

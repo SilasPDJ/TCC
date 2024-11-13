@@ -39,33 +39,34 @@
         <!-- Quem somos? -->
         <div class="container my-5">
             <div class="row">
-                <div class="col hidden quem-somos">
-                    <h2 class="mb-4  text-center">Quem Somos</h2>
-                    <p class="lead">
+                <div class="col quem-somos">
+                    <h2 class="mb-4  text-center quem-somos-title">Quem Somos</h2>
+
+                    <p class="lead quem-somos-text">
                         O projeto <b>LibrasConnect</b> surgiu em 2024, através de um grupo de TCC no curso de
                         Ciência da Computação da Universidade Municipal de São Caetano do Sul <i>(USCS)</i>.
                     </p>
                 </div>
-                <div class="objetivo mt-4">
-                    <p class="lead">
-                        Nosso principal <b>objetivo</b> é promover a <b>inclusão</b> e a <b>acessibilidade</b> para a comunidade surda,
-                        a qual representa 5% da população brasileira (IBGE, 2021).
-                    </p>
-                </div>
+            </div>
+            <div class="objetivo mt-4">
+                <p class="lead">
+                    Nosso principal <b>objetivo</b> é promover a <b>inclusão</b> e a <b>acessibilidade</b> para a comunidade surda,
+                    a qual representa 5% da população brasileira (IBGE, 2021).
+                </p>
+            </div>
 
-                <div class="sobre mt-4">
-                    <p class="lead">
-                        Acreditamos que derrubar barreiras de <b>comunicação</b> entre diferentes grupos linguísticos é
-                        um passo fundamental em busca de uma sociedade mais inclusiva.
-                    </p>
-                </div>
+            <div class="sobre mt-4">
+                <p class="lead">
+                    Acreditamos que derrubar barreiras de <b>comunicação</b> entre diferentes grupos linguísticos é
+                    um passo fundamental em busca de uma sociedade mais inclusiva.
+                </p>
+            </div>
 
-                <div class="proposito mt-4">
-                    <p class="lead">
-                        Visando isso, desenvolvemos uma <b>ferramenta</b> de reconhecimento e tradução de <b>Libras</b> <i>(Língua Brasileira de Sinais)</i>. Para acessá-la, é necessário efetuar <a href="/html/login" class="link-dark">login</a>.
+            <div class="proposito mt-4">
+                <p class="lead">
+                    Visando isso, desenvolvemos uma <b>ferramenta</b> de reconhecimento e tradução de <b>Libras</b> <i>(Língua Brasileira de Sinais)</i>. Para acessá-la, é necessário efetuar <a href="/html/login" class="link-dark">login</a>.
 
-                    </p>
-                </div>
+                </p>
             </div>
         </div>
 
@@ -95,7 +96,7 @@
     <script src="js/elementsEffect.js"></script>
 
     <script>
-        elementsEffect('sobre', 'quem-somos', 'objetivo', 'proposito', 'convite')
+        elementsEffect('sobre', 'quem-somos-title', 'quem-somos-text', 'objetivo', 'proposito', 'convite')
     </script>
 
 

@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.min.css">
 
 <link rel="stylesheet" type="text/css" href="../../css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/aprenda.css">
 <link rel="stylesheet" type="text/css" href="../../css/nav.css">
 <link rel="stylesheet" type="text/css" href="../../css/animations.css">
 

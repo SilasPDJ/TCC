@@ -3,7 +3,7 @@ $(document).ready(function () {
   var items = [
     {
       img: 'img/foto3.jpg',
-      titulo: 'Libras e ASL',
+      titulo: 'Reconhecimento de Gestos',
       descricao: 'O caminho para uma boa comunicação.',
       link: '#sobre'
     },
