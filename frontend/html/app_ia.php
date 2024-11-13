@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 
 <head>
-    <title>ASL - Tradução de Libras</title>
     <?php include_once('utils/head.php') ?>
-
+    <title>ASL - Tradução de Libras</title>
 </head>
 
 <body>
