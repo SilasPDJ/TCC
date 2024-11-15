@@ -5,7 +5,7 @@ $(document).ready(function () {
       img: 'img/foto3.jpg',
       titulo: 'Reconhecimento de Gestos',
       descricao: 'O caminho para uma boa comunicação.',
-      link: '#sobre'
+      link: '#'
     },
     {
       img: 'img/interprete.jpg',
@@ -23,22 +23,23 @@ $(document).ready(function () {
 
   // Seleciona o elemento com ID "carousel-inner"
   var $carouselInner = $('#carousel-inner');
-
+  let excludedIndexes = [0]
   // Itera sobre o array e cria cada item do carrossel
   items.forEach(function (item, index) {
-    var isActive = index === 0 ? 'active' : ''; // Define o item ativo
-    var carouselItem = `
-          <div class="carousel-item ${isActive} rounded">
-              <img src="${item.img}" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-md-block">
-                  <h3 class="">${item.titulo}</h3>
-                  <p class="">${item.descricao}</p>
-                  <a href="${item.link}">
-                      <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
-                  </a>
-              </div>
-          </div>
-      `;
+    let isActive = index === 0 ? 'active' : ''; // Define o item ativo
+    let carouselItem = `
+    <div class="carousel-item ${isActive} rounded">
+        <img src="${item.img}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block">
+            <h3 class="">${item.titulo}</h3>
+            <p class="">${item.descricao}</p>
+            ${!excludedIndexes.includes(index) ? `
+            <a href="${item.link}">
+                <button type="button" class="btn btn-outline-secondary slide">Saiba mais</button>
+            </a>` : ''}
+        </div>
+    </div>
+`;
     $carouselInner.append(carouselItem);
   });
 });

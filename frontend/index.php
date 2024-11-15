@@ -80,7 +80,7 @@
                 <div class="col-md-4 d-flex flex-column ml-2">
                     <h3 class="mb-3">Junte-se a Nós</h3>
                     <p class="lead">
-                        Junte-se a nós nessa jornada e faça parte dessa revolução na inclusão linguística.
+                        Queremos que você faça parte dessa revolução na inclusão linguística.
                     </p>
                 </div>
                 <div class="col-md-2"></div>

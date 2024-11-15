@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <title>Entrar</title>
+    <title>Login - Acesso ao Sistema de Reconhecimento</title>
     <!-- Links to Bootstrap CSS -->
     <?php require_once('utils/head.php') ?>
 
