@@ -22,39 +22,26 @@
 
             <!-- DESCRIÇÃO -->
             <div>
-                <h5>Conteúdo do vídeo:</h5>
-
+                <h5>Conteúdo:</h5>
                 <p>
-                    O curso de intérprete de Libras oferece uma abordagem abrangente para o aprendizado da língua e práticas interpretativas.
+                    O vídeo tem como objetivo ensinar sinais essenciais da Língua de Sinais Americana (ASL) para conversas cotidianas.
                 </p>
 
-                <h5>Alguns dos tópicos abordados incluem:</h5>
+
+                <h5>Tópicos Abordados:</h5>
 
                 <ul class="list-unstyled">
-                    <li>
-                        <strong>1. Introdução à ASL</strong><br> Neste tópico, os alunos serão apresentados à história, importância e características da ASL. Eles aprenderão sobre a comunidade surda e a cultura associada à língua de sinais.
-                    </li>
-                    <li>
-                        <strong>2. Alfabeto manual e números</strong><br> Os alunos aprenderão a soletrar palavras e expressar números em ASL usando o alfabeto manual e sinais numéricos. Isso é fundamental para a comunicação básica em ASL.
-                    </li>
-                    <li>
-                        <strong>3. Vocabulário básico</strong><br> Este tópico abordará o vocabulário essencial em ASL, como cumprimentos, saudações, pronomes, cores, membros da família, animais, alimentos e objetos do cotidiano. Os alunos irão adquirir um repertório básico de sinais para comunicação.
-                    </li>
-                    <li>
-                        <strong>4. Gramática e estrutura de frases</strong><br> Os alunos estudarão a gramática e a estrutura de frases da ASL. Eles aprenderão sobre a ordem das palavras, a utilização de expressões faciais e corporais, bem como os recursos gramaticais específicos da língua de sinais.
-                    </li>
-                    <li>
-                        <strong>5. Conversação e diálogos básicos</strong><br> Nesta etapa, os alunos praticarão a comunicação em ASL através de diálogos básicos. Eles aprenderão a iniciar e manter conversas simples, fazer perguntas e responder de forma apropriada.
-                    </li>
-                    <li>
-                        <strong>6. Contextos e vocabulário temático</strong><br> Este tópico apresentará aos alunos o vocabulário e os sinais específicos de diferentes contextos temáticos, como educação, saúde, viagens, trabalho e lazer. Isso permitirá que os alunos se comuniquem em situações do mundo real de maneira mais eficaz.
-                    </li>
-                </ul>
+                    <li><strong>1. Importância das palavras de alta frequência</strong><br> Aprender palavras de alta frequência é essencial para adquirir uma língua de forma eficaz. Este método é similar à maneira como as crianças aprendem sua primeira língua e é apoiado por programas educacionais, como o programa Fairview, na Califórnia.</li>
 
-                <h5>Benefícios do curso:</h5>
-                <p>
-                    A ASL é uma expressão cultural única e uma língua completa, com sua própria gramática e estrutura. Ao aprender ASL, você não apenas adquire uma nova habilidade linguística, mas também demonstra respeito e valorização pela diversidade cultural e linguística existente em nossa sociedade.
-                </p>
+                    <li><strong>2. Sinais para palavras do dia a dia</strong><br> Chris, o apresentador, ensina 10 palavras comuns e seus sinais correspondentes em ASL (Língua de Sinais Americana), destacando que muitas palavras em inglês têm múltiplos significados e, portanto, exigem sinais diferentes em ASL.</li>
+
+                    <li><strong>3. Exemplos de sinais</strong><br> Sinais específicos demonstrados incluem 'away' (longe), 'big' (grande), 'blue' (azul), 'can' (poder), 'come' (vir), 'down' (baixo), 'find' (encontrar), 'for' (para), 'funny' (engraçado), 'go' (ir) e 'help' (ajudar), com explicações sobre os gestos e variações para cada sinal.</li>
+
+                    <li><strong>4. Variações regionais</strong><br> Os espectadores são incentivados a aprender variações regionais dos sinais que podem encontrar em diferentes comunidades, destacando a importância de se adaptar às práticas locais da língua de sinais.</li>
+
+                    <li><strong>5. Encorajamento e apoio</strong><br> Chris convida os espectadores a praticarem esses sinais nas conversas e oferece apoio para aqueles que têm dúvidas ou precisam de ajuda enquanto aprendem ASL.</li>
+
+                </ul>
             </div>
 
             <?php

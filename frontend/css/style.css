@@ -21,6 +21,7 @@ main {
 
 footer {
     width: 100%;
+    background-color: #808080;
     /* O footer vai se posicionar normalmente após o conteúdo */
 }
 

@@ -39,7 +39,9 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
             </button>
             <div class="nav-logo">
                 <a class="navbar-brand navtitle" href="/">
-                    LibrasConnect <i class="fa-solid fa-language"></i>
+                    LibrasConnect
+                    <!-- <i class="fa-solid fa-language"></i> -->
+                    <img src="../../img/logo-icon.png" alt="Logo" style="width: 50px; height: auto; margin-left: 5px;">
                 </a>
             </div>
 

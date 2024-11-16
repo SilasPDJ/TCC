@@ -1,5 +1,5 @@
 <!-- PARTE DE BAIXO -->
-<footer class="footer pt-3 pb-0 bg-info " id="footer">
+<footer class="footer pt-3 pb-0 " id="footer">
     <div class="container text-white mx-auto">
         <div class="row itens">
             <div class="col-md-4">
@@ -60,7 +60,11 @@
 
         <div class="col-md-12">
             <div class="text-center mt-2">
-                <p class="fs-6 fw-bold">© 2024 - USCS</p>
+                <p class="fs-6 fw-bold">
+                    © 2024 - USCS
+                    <!-- <img src="../../img/logo-icon.png" alt="Logo" style="width: 100px; height: auto;"> -->
+                    <!-- LibrasConnect -->
+                </p>
             </div>
         </div>
     </div>

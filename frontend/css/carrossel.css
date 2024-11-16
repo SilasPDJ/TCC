@@ -5,6 +5,9 @@
 
 .carousel-item img {
     border-radius: 3%;
+    /* height: 680px; */
+    height: 680px;
+    /* width: 50px; */
 }
 
 

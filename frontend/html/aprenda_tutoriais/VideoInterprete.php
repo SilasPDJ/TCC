@@ -26,31 +26,23 @@
             <div class="mb-4">
                 <h3 class="mb-3">Descrição</h3>
 
-                <h5>Conteúdo do curso:</h5>
+                <h5>Conteúdo:</h5>
                 <p>
-                    O curso de intérprete de Libras oferece uma abordagem abrangente para o aprendizado da língua e práticas interpretativas.
+                    O vídeo apresenta a primeira aula de um curso gratuito de Língua Brasileira de Sinais (Libras) disponível no YouTube.
                 </p>
 
-                <h5>Alguns dos tópicos abordados incluem:</h5>
+                <h5>Tópicos Abordados:</h5>
                 <ul class="list-unstyled">
-                    <li>
-                        <strong>1. Introdução à Libras</strong><br> História, estrutura gramatical, vocabulário básico e expressões faciais e corporais.
-                    </li>
-                    <li>
-                        <strong>2. Cultura surda</strong><br> Conhecendo a comunidade surda, suas conquistas, desafios e a importância da inclusão.
-                    </li>
-                    <li>
-                        <strong>3. Técnicas de interpretação</strong><br> Interpretação consecutiva e simultânea, estratégias de tradução, práticas de acompanhamento e gerenciamento de estresse.
-                    </li>
-                    <li>
-                        <strong>4. Terminologia especializada</strong><br> Vocabulário específico em áreas como educação, saúde, jurídica, entre outras.
-                    </li>
-                    <li>
-                        <strong>5. Ética e profissionalismo</strong><br> Diretrizes éticas para a atuação como intérprete de Libras, confidencialidade, postura profissional e desenvolvimento contínuo.
-                    </li>
-                    <li>
-                        <strong>6. Práticas supervisionadas</strong><br> Oportunidades para praticar as habilidades interpretativas em situações reais, sob a supervisão de instrutores experientes.
-                    </li>
+                    <li><strong>1. Importância da Libras</strong><br> A Língua de Sinais é essencial para a comunicação das pessoas surdas, sendo a sua primeira língua e fundamental para o acesso à informação e inclusão social.</li>
+
+                    <li><strong>2. Alfabeto Manual</strong><br> A aula começa com a introdução ao alfabeto manual, explicando o uso das letras em Libras para nomear pessoas, lugares e objetos. Cada letra é demonstrada detalhadamente com a mão, com exemplos práticos de como realizar os sinais.</li>
+
+                    <li><strong>3. Cultura e Comunicação Surda</strong><br> A Língua de Sinais é parte da cultura da comunidade surda, e cada pessoa surda costuma ter um sinal que a identifica dentro da comunidade, um processo conhecido como "batismo", que não tem conotação religiosa, mas é uma forma de atribuição de um nome sinalizado.</li>
+
+                    <li><strong>4. Prática e Exercícios</strong><br> Os alunos são incentivados a praticar o alfabeto em casa e a participar de atividades para descobrir palavras e criar suas próprias apresentações em Libras. A próxima aula será focada em sinais relacionados à família.</li>
+
+                    <li><strong>5. Acessibilidade e Inclusão</strong><br> O curso visa tornar a comunicação mais acessível e inclusiva, ensinando os alunos a se comunicarem com pessoas surdas de maneira mais eficaz.</li>
+
                 </ul>
             </div>
 
