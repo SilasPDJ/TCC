@@ -1,3 +1,4 @@
+# -- coding: utf-8 --
 from sklearn.metrics import multilabel_confusion_matrix, accuracy_score
 from tensorflow.keras.layers import LSTM, Dense, Input, Dropout
 from sklearn.model_selection import train_test_split
@@ -19,6 +20,7 @@ import time
 import json
 import cv2
 import os
+
 # from tensorflow.keras.utils import to_categorical
 
 # import tensorflow as tf

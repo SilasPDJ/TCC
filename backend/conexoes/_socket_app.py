@@ -32,7 +32,8 @@ class SocketServer:
     def process_data(self, data):
         self.log_info(f"Processing data: {data}")
         try:
-            python_file = os.path.join(os.path.dirname(__file__), "..", "recognition_/leitura_sinais.py")
+            # python_file = os.path.join(os.path.dirname(__file__), "..", "recognition_/leitura_sinais.py")
+            python_file = os.path.join(os.path.dirname(__file__), "..", "execution_regocnition_model.py")
 
             # Caminho para o executável Python dentro do ambiente virtual
             python_executable = os.path.join(os.path.dirname(__file__), "..", "venv", "Scripts", "python")

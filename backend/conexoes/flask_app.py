@@ -1,6 +1,7 @@
 import socket
 import os
 import logging
+import subprocess
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
@@ -32,6 +33,7 @@ class SocketServerClient:
 
     def send_to_server(self, data):
         try:
+            subprocess.run(['python', os.path.join(os.path.dirname(__file__), '_socket_app.py')])
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
                 logging.info("Conectando ao servidor socket...")
                 sock.connect((self.host, self.port))
