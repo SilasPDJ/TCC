@@ -1,12 +1,12 @@
 <!-- PARTE DE BAIXO -->
-<footer class="footer py-3 bg-primary " id="footer">
+<footer class="footer pt-3 pb-0 bg-info " id="footer">
     <div class="container text-white mx-auto">
         <div class="row itens">
             <div class="col-md-4">
                 <h4 class="text-title">LibrasConnect</h4>
                 <ul class="list-unstyled">
                     <li>Everton de Sousa Monteiro</li>
-                    <li>Filipe Norberto Justino</li>
+                    <li>Filipe Noberto Justino</li>
                     <li>José Montoro Neto</li>
                     <li>Pedro Paulo Euphrausino</li>
                     <li>Silas Bertholdo Ferreira</li>

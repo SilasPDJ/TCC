@@ -71,21 +71,22 @@
         </div>
 
 
-        <div class="container mt-4 convite">
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-4">
-                    <img src="img/ilove.jpg" class="img-fluid rounded mb-4" alt="Inclusão Linguística" width="" />
-                </div>
-                <div class="col-md-4 d-flex flex-column ml-2">
-                    <h3 class="mb-3">Junte-se a Nós</h3>
+        <div class="container mt-5">
+            <div class="row justify-content-center convite-text">
+                <div class="col-md-10 text-center">
+                    <h3 class="font-weight-bold">Junte-se a Nós</h3>
                     <p class="lead">
                         Queremos que você faça parte dessa revolução na inclusão linguística.
                     </p>
                 </div>
-                <div class="col-md-2"></div>
+            </div>
+            <div class="row justify-content-center convite-img mt-4">
+                <div class="col-md-10">
+                    <img src="img/ilove.jpg" class="img-fluid rounded shadow-lg mb-4" alt="Inclusão Linguística" />
+                </div>
             </div>
         </div>
+
 
     </main>
 
@@ -96,7 +97,7 @@
     <script src="js/elementsEffect.js"></script>
 
     <script>
-        elementsEffect('sobre', 'quem-somos-title', 'quem-somos-text', 'objetivo', 'proposito', 'convite')
+        elementsEffect('sobre', 'quem-somos-title', 'quem-somos-text', 'objetivo', 'proposito', 'convite-img', 'convite-text')
     </script>
 
 

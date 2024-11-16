@@ -30,7 +30,7 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
 ?>
 
 <!-- TOPO -->
-<header class="">
+<header>
     <!-- NAVBAR RESPONSIVA -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-body m-0">
         <div class="container-fluid m-1">
@@ -44,6 +44,14 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
             </div>
 
             <div class="collapse navbar-collapse" id="navbarToggler">
+                <!-- Botões de Login e Cadastro para navbar colapsada -->
+                <?php if (!$isUserLogged): ?>
+                    <div class="mt-2 d-lg-none d-flex justify-content-center gap-2">
+                        <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0">Login</a>
+                        <a href="/html/cadastro" class="btn btn-outline-primary my-2 my-sm-0">Cadastre-se</a>
+                    </div>
+                <?php endif; ?>
+
                 <div class="navbar-nav mx-auto">
                     <?php if ($isUserLogged): ?>
                         <a class="nav-item nav-link <?php echo $currentPage == 'app_ia' ? 'active' : ''; ?> ml-4" href="/html/app_ia">Reconhecimento de Gestos</a>
@@ -53,9 +61,8 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
                     <a class="nav-item nav-link <?php echo $currentPage == 'aprenda' ? 'active' : ''; ?> ml-4" href="/html/aprenda">Aprenda</a>
                 </div>
 
-                <div id="userActions" class="d-flex">
+                <div id="userActions" class="d-flex ms-auto">
                     <?php if ($isUserLogged): ?>
-                        <!-- Dropdown menu para quando a navbar não estiver colapsada -->
                         <div class="nav-item dropdown ml-4 d-none d-lg-block">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Bem-vindo de volta, <?php echo $_SESSION['logged_user']['nome']; ?>!
@@ -65,8 +72,6 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
                                 <li><a class="dropdown-item text-center" href="/php/sair">Sair</a></li>
                             </ul>
                         </div>
-
-                        <!-- Opções de "Gerenciar Perfil" e "Sair" para o modo colapsado -->
                         <div class="d-flex d-lg-none">
                             <a href="/html/atualizar_cadastro" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Gerenciar Perfil</a>
                             <a href="/php/sair" class="btn btn-outline-danger my-2 my-sm-0 ml-2">Sair</a>
@@ -75,10 +80,11 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
                 </div>
             </div>
 
+            <!-- Botões de Login e Cadastro para telas grandes -->
             <?php if (!$isUserLogged): ?>
-                <div class="mt-2 d-flex ms-auto gap-2">
-                    <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">Login</a>
-                    <a href="/html/cadastro" class="btn btn-outline-primary my-2 my-sm-0 ml-2">Cadastre-se</a>
+                <div class="mt-2 d-none d-lg-flex ms-auto gap-2">
+                    <a href="/html/login" class="btn btn-outline-secondary my-2 my-sm-0">Login</a>
+                    <a href="/html/cadastro" class="btn btn-outline-primary my-2 my-sm-0">Cadastre-se</a>
                 </div>
             <?php endif; ?>
         </div>
