@@ -18,7 +18,7 @@
         <!-- BANNER -->
         <div class="jumbotron jumbotron-fluid"
             style="background-image: url('../../img/fundoAprenda.png'); background-size: cover;">
-            <div class="container">
+            <div class="container text-center">
                 <h1 class="display-4 title">Aprenda Online!</h1>
                 <p class="lead subTitle">Os melhores cursos voltados à Libras e ASL para você.</p>
             </div>
