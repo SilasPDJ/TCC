@@ -39,10 +39,10 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="form-group form-check mb-3">
+                                <!-- <div class="form-group form-check mb-3">
                                     <input type="checkbox" class="form-check-input" id="remember" name="remember">
                                     <label class="form-check-label" for="remember">Lembrar-me</label>
-                                </div>
+                                </div> -->
                                 <div id="validationMessage"></div>
 
                                 <div class="d-grid gap-2">
@@ -65,7 +65,15 @@
 
     <script src="../Js/validators/login.js"></script>
     <script src="../Js/common/events.js"></script>
-
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const passwordType = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', passwordType);
+            this.querySelector('i').classList.toggle('fa-eye');
+            this.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>
 
 </html>

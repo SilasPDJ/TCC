@@ -7,4 +7,5 @@ $(document).ready(function () {
     let input = $($(this).attr("toggle"));
     input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password');
   });
+
 });
