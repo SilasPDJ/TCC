@@ -18,6 +18,7 @@ function elementsEffect(...args) {
           element.style.visibility = 'hidden';
           element.style.transform = 'translateX(-300px)';
         };
+        hideElement();
 
         const observer = new IntersectionObserver(entries => {
           entries.forEach(entry => {
