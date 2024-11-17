@@ -91,8 +91,8 @@
                     disclaimerSuccess.classList.remove('d-none')
                 })
                 .catch((error) => {
-                    alert(error)
-                    errorDisclaimer.classList.remove('d-none')
+                    button.disabled = false;
+                    disclaimerError.classList.remove('d-none')
                 })
                 .finally(() => {
                     // Habilita o botão e esconde o spinner após o carregamento
