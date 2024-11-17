@@ -58,9 +58,8 @@ form.addEventListener('submit', function (event) {
         if (!response.success) {
           $(validationDiv).text(response.message).removeClass("text-success").addClass("text-danger");
         } else {
-          console.log('tetete')
           // redirecionar
-          window.location.href = '/'
+          window.location.href = '/html/app_ia'
         }
       },
       error: function () {

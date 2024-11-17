@@ -62,8 +62,8 @@
             <div class="text-center mt-2">
                 <p class="fs-6 fw-bold">
                     © 2024 - USCS
-                    <!-- <img src="../../img/logo-icon.png" alt="Logo" style="width: 100px; height: auto;"> -->
-                    <!-- LibrasConnect -->
+                    <img src="../../img/logo-icon.png" alt="Logo" style="width: 100px; height: auto;">
+                    LibrasConnect
                 </p>
             </div>
         </div>

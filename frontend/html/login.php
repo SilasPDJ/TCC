@@ -30,15 +30,13 @@
                                     <input type="email" class="form-control" id="username" name="username"
                                         placeholder="Digite o E-mail" required>
                                 </div>
-                                <div class="form-group mb-3" id="password-group">
-                                    <label for="password">Senha:</label>
+                                <div class="form-group mb-3">
+                                    <label for="password" class="form-label">Senha:</label>
                                     <div class="input-group">
-                                        <span class="input-group-text">
-                                            <i class="fa fa-fw fa-eye field_icon toggle-password"
-                                                toggle="#password"></i>
-                                        </span>
-                                        <input type="password" class="form-control" id="password" name="password"
-                                            placeholder="Digite a senha" required>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="fa fa-fw fa-eye field_icon"></i>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="form-group form-check mb-3">
