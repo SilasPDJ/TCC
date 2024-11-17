@@ -42,8 +42,10 @@ class SocketServer:
                 [python_executable, python_file],
                 capture_output=True,
                 text=True,
-                check=True
+                check=True,
+                env={**os.environ, "PYTHONIOENCODING": "utf-8"}
             )
+                
             self.log_info(f"Script output: {result.stdout.strip()}")
             if result.stderr:
                 self.log_error(f"Script errors: {result.stderr.strip()}")
@@ -77,8 +79,8 @@ class SocketServer:
                                 self.log_info(f"No data received. Closing connection with {addr}.")
                                 break
                             
-                            self.log_info(f"Data received from {addr}: {data.decode('utf-8')}")
-                            self.process_data(data.decode('utf-8'))
+                            self.log_info(f"Data received from {addr}: {data.decode('utf-8', errors='ignore')}")
+                            self.process_data(data.decode('utf-8', errors='ignore'))
                     except Exception as e:
                         self.log_error(f"Error during socket communication: {e}")
         finally:
