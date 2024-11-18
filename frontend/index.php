@@ -4,6 +4,8 @@
 <head>
     <title>ASL</title>
     <?php include_once('html/utils/head.php'); ?>
+    <script src="js/elementsEffect.js"></script>
+
 </head>
 
 
@@ -95,7 +97,6 @@
     <?php require_once('html/utils/footer.php'); ?>
 
     <script src="js/carousel.js"></script>
-    <script src="js/elementsEffect.js"></script>
 
     <script>
         elementsEffect('sobre', 'quem-somos-title', 'quem-somos-text', 'objetivo', 'proposito', 'convite-img', 'convite-text')
