@@ -64,7 +64,8 @@
 
             <div class="proposito mt-4">
                 <p class="lead">
-                    Visando isso, desenvolvemos uma <b>ferramenta</b> de reconhecimento e tradução de <b>Libras</b> <i>(Língua Brasileira de Sinais)</i>. Para acessá-la, é necessário efetuar <a href="/html/login" class="link-dark">login</a>.
+                    Visando isso, desenvolvemos uma <b>ferramenta</b> de reconhecimento e tradução de <b>Libras</b> <i>(Língua Brasileira de Sinais)</i>.
+                    <?php if ($isUserLogged): ?><a href="/html/app_ia" class="link-dark">Clique aqui</a> para acessá-la. <?php else: ?>Para acessá-la, é necessário efetuar <a href="/html/login" class="link-dark">login</a>. <?php endif; ?>
 
                 </p>
             </div>
