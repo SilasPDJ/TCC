@@ -6,6 +6,10 @@
     <?php include_once('html/utils/head.php'); ?>
     <script src="js/elementsEffect.js"></script>
 
+    <script>
+        elementsEffect('sobre', 'quem-somos-title', 'quem-somos-text', 'objetivo', 'proposito', 'convite-img', 'convite-text')
+    </script>
+
 </head>
 
 
@@ -18,7 +22,7 @@
             <div id="carouselExampleCaptions"
                 class="carousel slide mx-auto meu-carrossel"
                 data-bs-ride="carousel"
-                data-bs-interval="5000">
+                data-bs-interval="4000">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -97,10 +101,6 @@
     <?php require_once('html/utils/footer.php'); ?>
 
     <script src="js/carousel.js"></script>
-
-    <script>
-        elementsEffect('sobre', 'quem-somos-title', 'quem-somos-text', 'objetivo', 'proposito', 'convite-img', 'convite-text')
-    </script>
 
 
 
