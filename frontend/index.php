@@ -5,11 +5,9 @@
     <title>ASL</title>
     <?php include_once('html/utils/head.php'); ?>
     <script src="js/elementsEffect.js"></script>
-
     <script>
         elementsEffect('sobre', 'quem-somos-title', 'quem-somos-text', 'objetivo', 'proposito', 'convite-img', 'convite-text')
     </script>
-
 </head>
 
 
