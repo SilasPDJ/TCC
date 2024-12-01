@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 import cv2
 import numpy as np
@@ -11,12 +9,13 @@ class RecognitionModelRefactored:
         self.mp_holistic = mp.solutions.holistic
         self.mp_drawing = mp.solutions.drawing_utils
         self.cap = cv2.VideoCapture(0)
-        self.DATA_PATH = os.path.join('MP_Data')  
-        self.actions = np.array(['hello', 'thanks', 'euteamo'])
+        self.DATA_PATH = os.path.join('MP_Data_Train')  
+        self.actions = np.array(['ola', 'Nao', 'Thank you', 'Tudo Bem', 'Sim'])
         self.no_sequences = 30 
         self.sequence_length = 30
-        self.colors = [(245, 117, 16), (117, 245, 16), (16, 117, 245)]
-        self.model = load_model("shuffle3.keras")
+        #self.colors = [(245, 117, 16), (117, 245, 16), (16, 117, 245)]
+        self.colors = [(245, 117, 16), (117, 245, 16), (16, 117, 245), (16, 117, 245), (16, 117, 245)]
+        self.model = load_model("shuffle4.keras")
         self.threshold = 0.5
 
     def mediapipe_detector(self, image, model):
@@ -126,10 +125,27 @@ class RecognitionModelRefactored:
             en - ndarray: The image with drawn rectangles and action labels.
             pt - ndarray: A imagem com retângulos desenhados e rótulos de ação.
         """
+        # for num, prob in enumerate(predictions):
+        #     cv2.rectangle(image, (0, 60 + num * 40), (int(prob * 100), 90 + num * 40), self.colors[num], -1)
+        #     cv2.putText(image, self.actions[num], (0, 85 + num * 40), 
+        #                 cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+        # return image
+
+        height, width, _ = image.shape
+        bar_width = width // 3
+
+        #  Visualização com barras
         for num, prob in enumerate(predictions):
-            cv2.rectangle(image, (0, 60 + num * 40), (int(prob * 100), 90 + num * 40), self.colors[num], -1)
-            cv2.putText(image, self.actions[num], (0, 85 + num * 40), 
-                        cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            start_x = 10
+            start_y = 60 + num * 40
+            end_x = start_x + int(prob * bar_width)
+            end_y = start_y + 30
+
+            # Draw the bar
+            cv2.rectangle(image, (start_x, start_y), (end_x, end_y), self.colors[num], -1)
+            # Label text
+            cv2.putText(image, f"{self.actions[num]}: {int(prob * 100)}%", (start_x + 5, start_y + 25),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
         return image
 
     def execution_recognition_model(self):
@@ -187,10 +203,10 @@ class RecognitionModelRefactored:
                                 sentence = sentence[-5:]
 
                         image = self.visualize_probabilities(image, res)
-
-                    cv2.rectangle(image, (0, 0), (640, 40), (245, 117, 16), -1)
-                    cv2.putText(image, ' '.join(sentence), (3, 30), 
-                                cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+                    #tirei a barra azul horizontal de cima
+                    # cv2.rectangle(image, (0, 0), (640, 40), (245, 117, 16), -1)
+                    # cv2.putText(image, ' '.join(sentence), (3, 30), 
+                    #             cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
                 cv2.imshow('Recognition Training Sign', image)
                 if cv2.waitKey(10) & 0xFF == ord('q'):

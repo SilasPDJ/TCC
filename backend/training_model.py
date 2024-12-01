@@ -32,9 +32,9 @@ class RecognitionModel:
         self.result = None
         self.result_trainer = None
         self.DATA_PATH = os.path.join('MP_Data_Train')
-        self.actions = np.array(['hello', 'thanks', 'euteamo'])  # Actions that we try to detect
-        self.no_sequences = 5  # Thirty videos worth of data
-        self.sequence_length = 5  # Videos are going to be 30 frames in length
+        self.actions = np.array(['ola', 'Nao', 'Thank you', 'Tudo Bem', 'Sim'])  # Actions that we try to detect
+        self.no_sequences = 30  # Thirty videos worth of data
+        self.sequence_length = 30  # Videos are going to be 30 frames in length
         self.start_folder = 0  # Folder count start
         self.log_dir = os.path.join('Logs')
         self.tb_callback = TensorBoard(log_dir=self.log_dir)
@@ -250,7 +250,7 @@ class RecognitionModel:
                                 cv2.putText(image, 'Frames collected To {} Video Num {}'.format(action, sequence), (15,12), 
                                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
                                 cv2.imshow('Recognition Training Sign', image) 
-                                cv2.waitKey(1000)
+                                cv2.waitKey(1250)
                             else: 
                                 cv2.putText(image, 'Frames collected To {} Video Num {}'.format(action, sequence), (15,12), 
                                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
@@ -339,7 +339,7 @@ class RecognitionModel:
         model.add(Dense(32, activation='relu'))
         model.add(Dense(len(self.actions), activation='softmax'))  # Using len(self.actions) to define output 
         model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['categorical_accuracy'])  
-        # model.fit(X_train, y_train, epochs=10, callbacks=[self.tb_callback])  
+        model.fit(X_train, y_train, epochs=170, callbacks=[self.tb_callback])  
 
         return model, X_test, y_test
 
@@ -368,7 +368,7 @@ class RecognitionModel:
         ytrue = np.argmax(y_test, axis=1).tolist()
         yhat = np.argmax(yhat, axis=1).tolist()  
         
-        model.save('shuffle3.keras')
+        model.save('shuffle4.keras')
         
         print(multilabel_confusion_matrix(ytrue, yhat))
         print(accuracy_score(ytrue, yhat))

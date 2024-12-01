@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../Documents/Projeto VS CODE"
+		},
+		{
+			"path": "../../../../Downloads/ASL-SI-Project-master"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ASL-SI-Project-master"
+	}
+}
