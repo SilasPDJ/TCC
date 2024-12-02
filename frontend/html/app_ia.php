@@ -56,52 +56,8 @@
     <?php require_once('utils/footer.php') ?>
 
     <!-- JavaScript para enviar dados ao Flask -->
-    <script>
-        document.getElementById('reloadPageLink').addEventListener('click', function(event) {
-            event.preventDefault(); // Impede o comportamento padrão de recarregar a página ao clicar no link
-            location.reload(); // Recarrega a página
-        });
-        document.getElementById('sendDataBtn').addEventListener('click', function() {
-            const button = this;
-            const loadingSpinner = document.getElementById('loadingSpinner');
-            const disclaimerRefresh = document.getElementById('disclaimerRefresh')
-            const disclaimerSuccess = document.getElementById('disclaimerSuccess')
-            const disclaimerError = document.getElementById('disclaimerError')
+    <script src="../Js/app_ia.js"></script>
 
-            // Desativa o botão e mostra o spinner
-            button.disabled = true;
-            loadingSpinner.classList.remove('d-none');
-
-            const language = "Portuguese";
-            const data = {
-                selectedLanguage: language,
-                message: "Iniciando captura de gestos."
-            };
-
-            fetch('http://127.0.0.1:5000/send-data', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    disclaimerSuccess.classList.remove('d-none')
-                    disclaimerSuccess.classList.remove('d-none')
-                })
-                .catch((error) => {
-                    button.disabled = false;
-                    disclaimerError.classList.remove('d-none')
-                })
-                .finally(() => {
-                    // Habilita o botão e esconde o spinner após o carregamento
-                    // button.disabled = false;
-                    loadingSpinner.classList.add('d-none');
-                    disclaimerRefresh.classList.remove('d-none')
-                });
-        });
-    </script>
 </body>
 
 </html>

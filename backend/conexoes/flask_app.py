@@ -33,7 +33,6 @@ class SocketServerClient:
 
     def send_to_server(self, data):
         try:
-            subprocess.run(['python', os.path.join(os.path.dirname(__file__), '_socket_app.py')])
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
                 logging.info("Conectando ao servidor socket...")
                 sock.connect((self.host, self.port))
@@ -52,6 +51,26 @@ class FlaskApp:
         logging.info("Aplicação Flask inicializada.")
 
     def configure_routes(self):
+
+        @self.app.route('/start-socket', methods=['POST'])
+        def start_socket():
+            try:
+                subprocess.run(['python', os.path.join(os.path.dirname(__file__), '_socket_app.py')])
+            except:
+                logging.info("Não foi possível inicialziar a conexão _socket_app.py")
+            data = request.get_json()
+            if not data:
+                return jsonify({"error": "No data provided"}), 400  # dados ausentes
+
+            try:
+                self.client.send_to_server(str(data))
+                return jsonify({"message": "Data sent to socket server successfully"}), 200 
+            except Exception as e:
+                logging.error(f"Error sending data to socket: {e}")
+                return jsonify({"error": f"Failed to send data to socket server: {str(e)}"}), 500  # erro interno
+
+
+
         @self.app.route('/send-data', methods=['POST'])
         def send_data():
             try:
@@ -62,8 +81,8 @@ class FlaskApp:
 
                 message = str(data)
                 logging.info(f"Dados recebidos do frontend: {message}")
+                # self.client.send_to_server(message)
 
-                self.client.send_to_server(message)
                 logging.info("Resposta enviada para o cliente.")
                 return jsonify({"message": "Data sent to socket server"}), 200
 
@@ -72,6 +91,10 @@ class FlaskApp:
                 return jsonify({"error": str(e)}), 500
 
     def run(self):
+        # try:
+            # subprocess.run(['python', os.path.join(os.path.dirname(__file__), '_socket_app.py')])
+        # except:
+            # logging.info("Não foi possível inicialziar a conexão _socket_app.py")
         logging.info("Servidor Flask iniciado na porta 5000.")
         self.app.run(debug=True, port=5000)
 
