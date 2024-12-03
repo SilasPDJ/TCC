@@ -17,7 +17,7 @@
 
         <div class="container">
             <div class="text-center">
-                <h2 class="h2traduza"> <i class="fa-solid fa-language"></i> &nbsp Tradução de Libras e ASL</h2>
+                <h2 class="h2traduza"> <i class="fa-solid fa-language"></i> &nbsp Dicionário de Sinais</h2>
             </div>
 
             <div class=" row">
