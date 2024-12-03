@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>ASL</title>
+    <title>Página Inicial - LibrasConnect</title>
     <?php include_once('html/utils/head.php'); ?>
     <script src="js/elementsEffect.js"></script>
     <script>

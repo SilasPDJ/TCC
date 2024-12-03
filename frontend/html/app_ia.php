@@ -5,7 +5,7 @@
 
 <head>
     <?php include_once('utils/head.php') ?>
-    <title>ASL - Tradução de Libras</title>
+    <title>Reconhecimento de Gestos - LibrasConnect</title>
 </head>
 
 <body>

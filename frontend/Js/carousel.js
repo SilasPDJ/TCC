@@ -3,8 +3,8 @@ $(document).ready(function () {
   var items = [
     {
       img: 'img/foto3.jpg',
-      titulo: 'Reconhecimento de Gestos',
-      descricao: 'O caminho para uma boa comunicação.',
+      titulo: 'Reconhecimento de Gestos em Libras',
+      descricao: 'O caminho para uma comunicação mais inclusiva',
       link: '#'
     },
     {

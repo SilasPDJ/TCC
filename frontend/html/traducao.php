@@ -4,7 +4,7 @@
 <head>
     <?php include_once('utils/head.php') ?>
 
-    <title>ASL</title>
+    <title>Dicionário de Sinais</title>
 </head>
 
 
