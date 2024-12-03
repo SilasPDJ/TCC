@@ -7,6 +7,7 @@ $email = isset($_POST['email']) ? $_POST['email'] : '';
 
 // Validação do e-mail
 if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $response['success'] = false;
     $response['message'] = 'E-mail não fornecido ou inválido.';
     echo json_encode($response);
     exit;
@@ -16,6 +17,7 @@ if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $emailId = buscaEmailUnico($conexao, $email);
 
 if ($emailId === -1) {
+    $response['success'] = false;
     $response['message'] = 'E-mail não encontrado.';
     echo json_encode($response);
     exit;
