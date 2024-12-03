@@ -9,8 +9,8 @@ $(document).ready(function () {
     },
     {
       img: 'img/interprete.jpg',
-      titulo: 'Tradução',
-      descricao: 'Traduza Libras para ASL em qualquer lugar!',
+      titulo: 'Dicionário',
+      descricao: 'Explore sinais em Libras e ASL de forma simples e prática.',
       link: 'html/traducao'
     },
     {
