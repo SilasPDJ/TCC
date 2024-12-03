@@ -1,3 +1,5 @@
+<?php require_once('utils/security/redirecionar_index_no_session.php') ?>
+
 <!DOCTYPE html>
 <html>
 

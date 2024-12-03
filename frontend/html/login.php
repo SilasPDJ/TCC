@@ -44,7 +44,9 @@
                                     <label class="form-check-label" for="remember">Lembrar-me</label>
                                 </div> -->
                                 <div id="validationMessage"></div>
-
+                                <div class="mb-3 text-start">
+                                    <a href="/html/recuperar_senha" class="text-decoration-none">Esqueceu a senha?</a>
+                                </div>
                                 <div class="d-grid gap-2">
 
                                     <button type="submit" class="btn btn-primary btn-block">Entrar</button>
